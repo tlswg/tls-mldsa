@@ -1,6 +1,6 @@
-# TODO - Your title
+# ML-DSA for TLS
 
-This is the working area for the individual Internet-Draft, "TODO - Your title".
+This is the working area for the individual Internet-Draft, "ML-DSA for TLS".
 
 * [Editor's Copy](https://bwesterb.github.io/tls-mldsa/#go.draft-tls-westerbaan-mldsa.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-tls-westerbaan-mldsa)
