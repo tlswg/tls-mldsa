@@ -4,7 +4,7 @@ abbrev: "Use of ML-DSA in TLS"
 category: info
 
 docname: draft-tls-westerbaan-mldsa-latest
-submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
+submissiontype: IETF
 number:
 date:
 consensus: true
