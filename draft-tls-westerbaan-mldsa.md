@@ -75,9 +75,9 @@ types for the three ML-DSA parameter sets as follows.
 
 ~~~
 enum {
-  mldsa44(0x0900),
-  mldsa65(0x0901),
-  mldsa87(0x0902)
+  mldsa44(0x0904),
+  mldsa65(0x0905),
+  mldsa87(0x0906)
 } SignatureScheme;
 ~~~
 
@@ -104,9 +104,9 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 
 | Value           | Description | Recommended | Reference      |
 |-----------------|-------------|-------------|----------------|
-| 0x0900 (please) | mldsa44     | Y           | This document. |
-| 0x0901 (please) | mldsa65     | Y           | This document. |
-| 0x0902 (please) | mldsa87     | Y           | This document. |
+| 0x0904 (please) | mldsa44     | Y           | This document. |
+| 0x0905 (please) | mldsa65     | Y           | This document. |
+| 0x0906 (please) | mldsa87     | Y           | This document. |
 
 --- back
 
