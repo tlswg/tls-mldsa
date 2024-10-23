@@ -1,6 +1,6 @@
 ---
-title: "Use of ML-DSA in TLS"
-abbrev: "Use of ML-DSA in TLS"
+title: "Use of ML-DSA in TLS 1.3"
+abbrev: "Use of ML-DSA in TLS 1.3"
 category: info
 
 docname: draft-tls-westerbaan-mldsa-latest
@@ -48,7 +48,7 @@ informative:
 --- abstract
 
 This memo specifies how the post-quantum signature scheme ML-DSA (FIPS 204)
-is used for authentication in TLS.
+is used for authentication in TLS 1.3.
 
 
 --- middle
@@ -59,7 +59,7 @@ ML-DSA {{!FIPS204=DOI.10.6028/NIST.FIPS.204}} is one of the first
 two post-quantum signature schemes standardised by NIST. It is a
 module-lattice based scheme.
 
-This memo specifies how ML-DSA can be negotiated for authentication in TLS
+This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
 via the "signature_algorithms" extension.
 
 # Conventions and Definitions
