@@ -88,7 +88,7 @@ we use the pure version.
 Similarly, the context parameter defined in {{FIPS204}} Algorithm 2/Algorithm 3
 MUST be the empty string.
 
-The corresponding end-entity certificate when negotiated must
+The corresponding end-entity certificate when negotiated MUST
 use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
 defined in {{I-D.ietf-lamps-dilithium-certificates}}.
 
