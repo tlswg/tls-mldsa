@@ -4,8 +4,10 @@
 
 Network Working Group                                       T. Hollebeek
 Internet-Draft                                                  DigiCert
-Intended status: Informational                             B. Westerbaan
-Expires: 26 April 2025                                        Cloudflare
+Intended status: Informational                                S. Schmieg
+Expires: 26 April 2025                                            Google
+                                                           B. Westerbaan
+                                                              Cloudflare
                                                          23 October 2024
 
 
@@ -180,6 +182,11 @@ Authors' Addresses
    Tim Hollebeek
    DigiCert
    Email: tim.hollebeek@digicert.com
+
+
+   Sophie Schmieg
+   Google
+   Email: sschmieg@google.com
 
 
    Bas Westerbaan
