@@ -85,6 +85,9 @@ in {{FIPS204}} respectively. Note that these should not be confused
 with prehashed variants such as HashML-DSA-44 alsodefined in {{FIPS204}}:
 we use the pure version.
 
+Similarly, the context parameter defined in {{FIPS204}} Algorithm 2/Algorithm 3
+MUST be the empty string.
+
 The corresponding end-entity certificate when negotiated must
 use id-ML-DSA-44, id-ML-DSA-64, id-ML-DSA-87 respectively as
 defined in {{I-D.ietf-lamps-dilithium-certificates}}.
