@@ -82,7 +82,7 @@ enum {
 ~~~
 
 These correspond to ML-DSA-44, ML-DSA-64, and ML-DSA-87 defined
-in {{FIPS204}} respectively. Note that these are the pure versions adn should not be confused
+in {{FIPS204}} respectively. Note that these are the pure versions and should not be confused
 with prehashed variants such as HashML-DSA-44 also defined in {{FIPS204}}.
 
 Similarly, the context parameter defined in {{FIPS204}} Algorithm 2/Algorithm 3
