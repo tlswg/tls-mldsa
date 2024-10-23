@@ -179,7 +179,8 @@ Table of Contents
 
 Acknowledgments
 
-   TODO acknowledge.
+   Thanks to Alicja Kario and John Mattsson for their review and
+   feedback.
 
 Authors' Addresses
 
