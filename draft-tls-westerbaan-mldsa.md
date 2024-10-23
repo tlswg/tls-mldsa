@@ -81,7 +81,7 @@ enum {
 } SignatureScheme;
 ~~~
 
-These correspond to ML-DSA-44, ML-DSA-64, and ML-DSA-87 defined
+These correspond to ML-DSA-44, ML-DSA-65, and ML-DSA-87 defined
 in {{FIPS204}} respectively. Note that these are the pure versions and should not be confused
 with prehashed variants such as HashML-DSA-44 also defined in {{FIPS204}}.
 
@@ -89,7 +89,7 @@ Similarly, the context parameter defined in {{FIPS204}} Algorithm 2/Algorithm 3
 MUST be the empty string.
 
 The corresponding end-entity certificate when negotiated MUST
-use id-ML-DSA-44, id-ML-DSA-64, id-ML-DSA-87 respectively as
+use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
 defined in {{I-D.ietf-lamps-dilithium-certificates}}.
 
 # Security Considerations
