@@ -27,6 +27,10 @@ author:
     fullname: "Tim Hollebeek"
     organization: DigiCert
     email: tim.hollebeek@digicert.com
+  -
+    fullname: "Sophie Schmieg"
+    organization: Google
+    email: sschmieg@google.com
  -
     fullname: "Bas Westerbaan"
     organization: Cloudflare
