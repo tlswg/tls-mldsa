@@ -113,4 +113,4 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 # Acknowledgments
 {:numbered="false"}
 
-TODO acknowledge.
+Thanks to Alicja Kario and John Mattsson for their review and feedback.
