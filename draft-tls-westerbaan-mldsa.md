@@ -55,12 +55,12 @@ is used for authentication in TLS 1.3.
 
 # Introduction
 
-ML-DSA {{!FIPS204=DOI.10.6028/NIST.FIPS.204}} is one of the first
-two post-quantum signature schemes standardised by NIST. It is a
+ML-DSA {{!FIPS204=DOI.10.6028/NIST.FIPS.204}} is a
+post-quantum signature schemes standardised by NIST. It is a
 module-lattice based scheme.
 
 This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
-via the "signature_algorithms" extension.
+via the "signature_algorithms" and "signature_algorithms_cert" extensions.
 
 # Conventions and Definitions
 
@@ -69,7 +69,8 @@ via the "signature_algorithms" extension.
 # ML-DSA SignatureSchemes Types
 As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
-"signature_algorithms" extension. This document adds three new SignatureSchemes
+"signature_algorithms" and "signature_algorithms_cert" extensions.
+This document adds three new SignatureSchemes
 types for the three ML-DSA parameter sets as follows.
 
 ~~~
@@ -81,9 +82,8 @@ enum {
 ~~~
 
 These correspond to ML-DSA-44, ML-DSA-64, and ML-DSA-87 defined
-in {{FIPS204}} respectively. Note that these should not be confused
-with prehashed variants such as HashML-DSA-44 also defined in {{FIPS204}}:
-we use the pure version.
+in {{FIPS204}} respectively. Note that these are the pure versions adn should not be confused
+with prehashed variants such as HashML-DSA-44 also defined in {{FIPS204}}.
 
 Similarly, the context parameter defined in {{FIPS204}} Algorithm 2/Algorithm 3
 MUST be the empty string.
@@ -99,7 +99,7 @@ TODO Security
 
 # IANA Considerations
 
-This document requests a new entry to the TLS SignatureSchemes registry,
+This document requests new entries to the TLS SignatureScheme registry,
 according to the procedures in {{Section 6 of TLSIANA}}.
 
 | Value           | Description | Recommended | Reference      |
