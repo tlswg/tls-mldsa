@@ -1174,11 +1174,11 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">ML-DSA <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> is one of the first
-two post-quantum signature schemes standardised by NIST. It is a
+<p id="section-1-1">ML-DSA <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> is a
+post-quantum signature schemes standardised by NIST. It is a
 module-lattice based scheme.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
-via the "signature_algorithms" extension.<a href="#section-1-2" class="pilcrow">¶</a></p>
+via the "signature_algorithms" and "signature_algorithms_cert" extensions.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1199,7 +1199,8 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       </h2>
 <p id="section-3-1">As defined in <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
-"signature_algorithms" extension. This document adds three new SignatureSchemes
+"signature_algorithms" and "signature_algorithms_cert" extensions.
+This document adds three new SignatureSchemes
 types for the three ML-DSA parameter sets as follows.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3-2">
 <pre>
@@ -1211,9 +1212,8 @@ enum {
 </pre><a href="#section-3-2" class="pilcrow">¶</a>
 </div>
 <p id="section-3-3">These correspond to ML-DSA-44, ML-DSA-64, and ML-DSA-87 defined
-in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> respectively. Note that these should not be confused
-with prehashed variants such as HashML-DSA-44 also defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>:
-we use the pure version.<a href="#section-3-3" class="pilcrow">¶</a></p>
+in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> respectively. Note that these are the pure versions and should not be confused
+with prehashed variants such as HashML-DSA-44 also defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
 <p id="section-3-4">Similarly, the context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2/Algorithm 3
 <span class="bcp14">MUST</span> be the empty string.<a href="#section-3-4" class="pilcrow">¶</a></p>
 <p id="section-3-5">The corresponding end-entity certificate when negotiated <span class="bcp14">MUST</span>
@@ -1234,7 +1234,7 @@ defined in <span>[<a href="#I-D.ietf-lamps-dilithium-certificates" class="cite x
       <h2 id="name-iana-considerations">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-5-1">This document requests a new entry to the TLS SignatureSchemes registry,
+<p id="section-5-1">This document requests new entries to the TLS SignatureScheme registry,
 according to the procedures in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-09#section-6" class="relref">Section 6</a> of [<a href="#TLSIANA" class="cite xref">TLSIANA</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <table class="center" id="table-1">
         <caption><a href="#table-1" class="selfRef">Table 1</a></caption>

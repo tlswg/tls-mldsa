@@ -77,11 +77,12 @@ Table of Contents
 
 1.  Introduction
 
-   ML-DSA [FIPS204] is one of the first two post-quantum signature
-   schemes standardised by NIST.  It is a module-lattice based scheme.
+   ML-DSA [FIPS204] is a post-quantum signature schemes standardised by
+   NIST.  It is a module-lattice based scheme.
 
    This memo specifies how ML-DSA can be negotiated for authentication
-   in TLS 1.3 via the "signature_algorithms" extension.
+   in TLS 1.3 via the "signature_algorithms" and
+   "signature_algorithms_cert" extensions.
 
 2.  Conventions and Definitions
 
@@ -95,9 +96,9 @@ Table of Contents
 
    As defined in [RFC8446], the SignatureScheme namespace is used for
    the negotiation of signature scheme for authentication via the
-   "signature_algorithms" extension.  This document adds three new
-   SignatureSchemes types for the three ML-DSA parameter sets as
-   follows.
+   "signature_algorithms" and "signature_algorithms_cert" extensions.
+   This document adds three new SignatureSchemes types for the three ML-
+   DSA parameter sets as follows.
 
    enum {
      mldsa44(0x0900),
@@ -106,9 +107,9 @@ Table of Contents
    } SignatureScheme;
 
    These correspond to ML-DSA-44, ML-DSA-64, and ML-DSA-87 defined in
-   [FIPS204] respectively.  Note that these should not be confused with
-   prehashed variants such as HashML-DSA-44 also defined in [FIPS204]:
-   we use the pure version.
+   [FIPS204] respectively.  Note that these are the pure versions and
+   should not be confused with prehashed variants such as HashML-DSA-44
+   also defined in [FIPS204].
 
    Similarly, the context parameter defined in [FIPS204] Algorithm 2/
    Algorithm 3 MUST be the empty string.
@@ -123,7 +124,7 @@ Table of Contents
 
 5.  IANA Considerations
 
-   This document requests a new entry to the TLS SignatureSchemes
+   This document requests new entries to the TLS SignatureScheme
    registry, according to the procedures in Section 6 of [TLSIANA].
 
      +=================+=============+=============+================+
