@@ -1,0 +1,186 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-10-24T00:52:56.402566+00:00",
+  "repo": "bwesterb/tls-mldsa",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDONEpyw86bfguA",
+      "title": "Context string",
+      "url": "https://github.com/bwesterb/tls-mldsa/issues/1",
+      "state": "OPEN",
+      "author": "bwesterb",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "There is an argument to be made to set the context string to a fixed constant like \"TLS1.3\" to nudge cryptographic libraries to support context parameters more widely.",
+      "createdAt": "2024-10-23T13:58:52Z",
+      "updatedAt": "2024-10-23T13:58:52Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 2,
+      "id": "PR_kwDONEpyw85_qCRV",
+      "title": "sig_alg MUST match the EE SPKI",
+      "url": "https://github.com/bwesterb/tls-mldsa/pull/2",
+      "state": "MERGED",
+      "author": "tomato42",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-10-23T17:59:38Z",
+      "updatedAt": "2024-10-23T21:59:01Z",
+      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "325a0dcb496e63a8bfe078cd86391e8dc1c4bfa8",
+      "headRepository": "tomato42/tls-mldsa",
+      "headRefName": "must-match",
+      "headRefOid": "a325b23085d33d96c2963efc6cc389560fde18a2",
+      "closedAt": "2024-10-23T20:10:03Z",
+      "mergedAt": "2024-10-23T20:10:03Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "f96d394e05cca17a546f54a3a2ac1ee6969ce89d"
+      },
+      "comments": [
+        {
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "body": "Thanks.",
+          "createdAt": "2024-10-23T20:09:00Z",
+          "updatedAt": "2024-10-23T20:09:00Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDONEpyw85_qCrz",
+      "title": "Minor suggestions",
+      "url": "https://github.com/bwesterb/tls-mldsa/pull/3",
+      "state": "MERGED",
+      "author": "emanjon",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "- NIST already standardized the PQC signature algorithms XMSS and LMS\r\n- Removed the word \"we\", which is unclear in standards. \r\n- The registry name is TLS SignatureScheme.\r\n- I assume this should be for \"signature_algorithms_cert\" as well",
+      "createdAt": "2024-10-23T18:00:13Z",
+      "updatedAt": "2024-10-23T20:12:05Z",
+      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "325a0dcb496e63a8bfe078cd86391e8dc1c4bfa8",
+      "headRepository": "emanjon/tls-mldsa",
+      "headRefName": "patch-3",
+      "headRefOid": "44f0aa7f1ac4f4c3be3ce44aa79067111519899e",
+      "closedAt": "2024-10-23T20:12:05Z",
+      "mergedAt": "2024-10-23T20:12:05Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "d8baf038555efb3089ef75c8bdc049cfbc35ae1d"
+      },
+      "comments": [
+        {
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "body": "Thanks.",
+          "createdAt": "2024-10-23T20:09:54Z",
+          "updatedAt": "2024-10-23T20:09:54Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONEpyw86Ob1ir",
+          "commit": {
+            "abbreviatedOid": "44f0aa7"
+          },
+          "author": "tomato42",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-23T18:11:23Z",
+          "updatedAt": "2024-10-23T18:11:23Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDONEpyw85_qZ1X",
+      "title": "fix typo in the name of ML-DSA-65",
+      "url": "https://github.com/bwesterb/tls-mldsa/pull/4",
+      "state": "MERGED",
+      "author": "tomato42",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The algorithm is ML-DSA-65, not ML-DSA-64",
+      "createdAt": "2024-10-23T18:33:59Z",
+      "updatedAt": "2024-10-23T22:00:16Z",
+      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "d8baf038555efb3089ef75c8bdc049cfbc35ae1d",
+      "headRepository": "tomato42/tls-mldsa",
+      "headRefName": "fix-ml-dsa-64-typo",
+      "headRefOid": "eb713330f29dc522b5faa75eca346fc7afe8f33d",
+      "closedAt": "2024-10-23T20:18:05Z",
+      "mergedAt": "2024-10-23T20:18:05Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "bdc27250ad098754f198319596cee16135eb1711"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
