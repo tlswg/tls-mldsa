@@ -88,6 +88,9 @@ with prehashed variants such as HashML-DSA-44 also defined in {{FIPS204}}.
 Similarly, the context parameter defined in {{FIPS204}} Algorithm 2/Algorithm 3
 MUST be the empty string.
 
+The signature MUST be computed and verified as specified in
+{{Section 4.4.3 of RFC8446}}.
+
 The corresponding end-entity certificate when negotiated MUST
 use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
 defined in {{I-D.ietf-lamps-dilithium-certificates}}.
