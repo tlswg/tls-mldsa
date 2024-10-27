@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-24T00:52:56.402566+00:00",
+  "timestamp": "2024-10-27T00:57:19.042783+00:00",
   "repo": "bwesterb/tls-mldsa",
   "labels": [
     {
@@ -181,6 +181,138 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDONEpyw85_uwew",
+      "title": "Set recommended to N",
+      "url": "https://github.com/bwesterb/tls-mldsa/pull/5",
+      "state": "OPEN",
+      "author": "bwesterb",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Suggested by @emanjon",
+      "createdAt": "2024-10-24T07:59:07Z",
+      "updatedAt": "2024-10-24T07:59:07Z",
+      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
+      "headRepository": "bwesterb/tls-mldsa",
+      "headRefName": "bas/recn",
+      "headRefOid": "16c6c49ae03e70d094705b2d7c1d3b714c6d8f74",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDONEpyw85_wg1L",
+      "title": "Be explicit about the way the signature is to be computed and verified",
+      "url": "https://github.com/bwesterb/tls-mldsa/pull/6",
+      "state": "OPEN",
+      "author": "tomato42",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "As the context string is already part of the message signed, it's related to the lack of the context string from the paragraph above.",
+      "createdAt": "2024-10-24T11:35:56Z",
+      "updatedAt": "2024-10-24T13:23:12Z",
+      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
+      "headRepository": "tomato42/tls-mldsa",
+      "headRefName": "explicit-what-sign",
+      "headRefOid": "d763c8012df333b54162b50d60a4ac06154c8d22",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONEpyw86Ol-kF",
+          "commit": {
+            "abbreviatedOid": "d763c80"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-24T12:23:54Z",
+          "updatedAt": "2024-10-24T12:23:54Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONEpyw86OmrRA",
+          "commit": {
+            "abbreviatedOid": "d763c80"
+          },
+          "author": "dconnolly",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-24T13:23:12Z",
+          "updatedAt": "2024-10-24T13:23:12Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDONEpyw85_wjh-",
+      "title": "make it explicit that those are not for TLS 1.2",
+      "url": "https://github.com/bwesterb/tls-mldsa/pull/7",
+      "state": "OPEN",
+      "author": "tomato42",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "in context of https://datatracker.ietf.org/doc/draft-ietf-tls-tls12-frozen/, we should be explicit that those new schemes MUST NOT be used in TLS 1.2",
+      "createdAt": "2024-10-24T11:41:48Z",
+      "updatedAt": "2024-10-24T13:22:45Z",
+      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
+      "headRepository": "tomato42/tls-mldsa",
+      "headRefName": "no-tls12",
+      "headRefOid": "96295207e48b15ed81cf44661c28bb165760c81f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONEpyw86Ol-3f",
+          "commit": {
+            "abbreviatedOid": "9629520"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-24T12:24:21Z",
+          "updatedAt": "2024-10-24T12:24:21Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONEpyw86Omq9p",
+          "commit": {
+            "abbreviatedOid": "9629520"
+          },
+          "author": "dconnolly",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-24T13:22:45Z",
+          "updatedAt": "2024-10-24T13:22:45Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
