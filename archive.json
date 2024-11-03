@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-31T00:54:12.162350+00:00",
+  "timestamp": "2024-11-03T00:57:23.739380+00:00",
   "repo": "bwesterb/tls-mldsa",
   "labels": [
     {
@@ -62,9 +62,17 @@
       "labels": [],
       "body": "There is an argument to be made to set the context string to a fixed constant like \"TLS1.3\" to nudge cryptographic libraries to support context parameters more widely.",
       "createdAt": "2024-10-23T13:58:52Z",
-      "updatedAt": "2024-10-23T13:58:52Z",
+      "updatedAt": "2024-10-31T11:20:29Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "body": "[Ilari](https://mailarchive.ietf.org/arch/msg/spasm/eC-eip8u70o2mqFw90drPt2AEko/)\r\n\r\n> I did some explorative coding on using nontrivial context for TLS 1.3\r\n> signatures (which have further contextualization of their own) and\r\n> discovered that version-specific or even TLS specific context would\r\n> cause issues with delegated credentials (and other similar things).\r\n> So context should be assigned to the construct as whole, not to its\r\n> use in TLS 1.3 or even to its use in TLS (the further\r\n> contextualization will separate those if needed).",
+          "createdAt": "2024-10-31T11:20:27Z",
+          "updatedAt": "2024-10-31T11:20:27Z"
+        }
+      ]
     }
   ],
   "pulls": [
