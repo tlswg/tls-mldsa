@@ -1274,6 +1274,10 @@ with prehashed variants such as HashML-DSA-44 also defined in <span>[<a href="#F
 <p id="section-3-6">The corresponding end-entity certificate when negotiated <span class="bcp14">MUST</span>
 use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
 defined in <span>[<a href="#I-D.ietf-lamps-dilithium-certificates" class="cite xref">I-D.ietf-lamps-dilithium-certificates</a>]</span>.<a href="#section-3-6" class="pilcrow">¶</a></p>
+<p id="section-3-7">The schemes defined in this document <span class="bcp14">MUST NOT</span> be used in TLS 1.2 <span>[<a href="#RFC5246" class="cite xref">RFC5246</a>]</span>.
+A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
+1.2 connection with schemes defined in this document <span class="bcp14">MUST</span> abort the connection
+with an illegal_parameter alert.<a href="#section-3-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
@@ -1359,6 +1363,10 @@ according to the procedures in <span><a href="https://datatracker.ietf.org/doc/h
 <dt id="I-D.ietf-lamps-dilithium-certificates">[I-D.ietf-lamps-dilithium-certificates]</dt>
         <dd>
 <span class="refAuthor">Massimo, J.</span>, <span class="refAuthor">Kampanakis, P.</span>, <span class="refAuthor">Turner, S.</span>, and <span class="refAuthor">B. Westerbaan</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure: Algorithm Identifiers for ML-DSA"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-dilithium-certificates-05</span>, <time datetime="2024-11-04" class="refDate">4 November 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-05">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-05</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5246">[RFC5246]</dt>
+        <dd>
+<span class="refAuthor">Dierks, T.</span> and <span class="refAuthor">E. Rescorla</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.2"</span>, <span class="seriesInfo">RFC 5246</span>, <span class="seriesInfo">DOI 10.17487/RFC5246</span>, <time datetime="2008-08" class="refDate">August 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5246">https://www.rfc-editor.org/rfc/rfc5246</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8446">[RFC8446]</dt>
         <dd>
