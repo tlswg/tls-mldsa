@@ -39,6 +39,7 @@ author:
 normative:
 
 informative:
+ RFC5246:
  RFC8446:
  TLSIANA: I-D.ietf-tls-rfc8447bis
  I-D.ietf-lamps-dilithium-certificates:
@@ -94,6 +95,11 @@ The signature MUST be computed and verified as specified in
 The corresponding end-entity certificate when negotiated MUST
 use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
 defined in {{I-D.ietf-lamps-dilithium-certificates}}.
+
+The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}.
+A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
+1.2 connection with schemes defined in this document MUST abort the connection
+with an illegal_parameter alert.
 
 # Security Considerations
 
