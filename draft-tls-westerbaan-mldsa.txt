@@ -5,10 +5,10 @@
 Network Working Group                                       T. Hollebeek
 Internet-Draft                                                  DigiCert
 Intended status: Informational                                S. Schmieg
-Expires: 26 April 2025                                            Google
+Expires: 19 May 2025                                              Google
                                                            B. Westerbaan
                                                               Cloudflare
-                                                         23 October 2024
+                                                        15 November 2024
 
 
                         Use of ML-DSA in TLS 1.3
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 April 2025.
+   This Internet-Draft will expire on 19 May 2025.
 
 Copyright Notice
 
@@ -130,11 +130,11 @@ Table of Contents
      +=================+=============+=============+================+
      | Value           | Description | Recommended | Reference      |
      +=================+=============+=============+================+
-     | 0x0904 (please) | mldsa44     | Y           | This document. |
+     | 0x0904 (please) | mldsa44     | N           | This document. |
      +-----------------+-------------+-------------+----------------+
-     | 0x0905 (please) | mldsa65     | Y           | This document. |
+     | 0x0905 (please) | mldsa65     | N           | This document. |
      +-----------------+-------------+-------------+----------------+
-     | 0x0906 (please) | mldsa87     | Y           | This document. |
+     | 0x0906 (please) | mldsa87     | N           | This document. |
      +-----------------+-------------+-------------+----------------+
 
                                  Table 1
@@ -164,8 +164,9 @@ Table of Contents
               Westerbaan, "Internet X.509 Public Key Infrastructure:
               Algorithm Identifiers for ML-DSA", Work in Progress,
               Internet-Draft, draft-ietf-lamps-dilithium-certificates-
-              04, 22 July 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-lamps-dilithium-certificates-04>.
+              05, 4 November 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-lamps-
+              dilithium-certificates-05>.
 
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
@@ -173,9 +174,9 @@ Table of Contents
 
    [TLSIANA]  Salowey, J. A. and S. Turner, "IANA Registry Updates for
               TLS and DTLS", Work in Progress, Internet-Draft, draft-
-              ietf-tls-rfc8447bis-09, 30 April 2024,
+              ietf-tls-rfc8447bis-10, 3 November 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-tls-
-              rfc8447bis-09>.
+              rfc8447bis-10>.
 
 Acknowledgments
 
