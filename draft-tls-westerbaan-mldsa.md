@@ -104,9 +104,9 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 
 | Value           | Description | Recommended | Reference      |
 |-----------------|-------------|-------------|----------------|
-| 0x0904 (please) | mldsa44     | Y           | This document. |
-| 0x0905 (please) | mldsa65     | Y           | This document. |
-| 0x0906 (please) | mldsa87     | Y           | This document. |
+| 0x0904 (please) | mldsa44     | N           | This document. |
+| 0x0905 (please) | mldsa65     | N           | This document. |
+| 0x0906 (please) | mldsa87     | N           | This document. |
 
 --- back
 
