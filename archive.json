@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-14T00:53:06.147220+00:00",
+  "timestamp": "2024-11-17T00:59:14.801596+00:00",
   "repo": "bwesterb/tls-mldsa",
   "labels": [
     {
@@ -62,7 +62,7 @@
       "labels": [],
       "body": "There is an argument to be made to set the context string to a fixed constant like \"TLS1.3\" to nudge cryptographic libraries to support context parameters more widely.",
       "createdAt": "2024-10-23T13:58:52Z",
-      "updatedAt": "2024-10-31T11:20:29Z",
+      "updatedAt": "2024-11-14T13:13:39Z",
       "closedAt": null,
       "comments": [
         {
@@ -71,6 +71,13 @@
           "body": "[Ilari](https://mailarchive.ietf.org/arch/msg/spasm/eC-eip8u70o2mqFw90drPt2AEko/)\r\n\r\n> I did some explorative coding on using nontrivial context for TLS 1.3\r\n> signatures (which have further contextualization of their own) and\r\n> discovered that version-specific or even TLS specific context would\r\n> cause issues with delegated credentials (and other similar things).\r\n> So context should be assigned to the construct as whole, not to its\r\n> use in TLS 1.3 or even to its use in TLS (the further\r\n> contextualization will separate those if needed).",
           "createdAt": "2024-10-31T11:20:27Z",
           "updatedAt": "2024-10-31T11:20:27Z"
+        },
+        {
+          "author": "tomato42",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ":-1: from me for using non-empty context string\r\n\r\nI don't think it's necessary, the \"message\" signed already makes it plainly obvious that we're signing TLS 1.3 handshake hash, and the libraries will need to support context string for the hybrid schemes, so requiring its use for TLS won't change much and may just delay deployability of this draft",
+          "createdAt": "2024-11-14T13:13:37Z",
+          "updatedAt": "2024-11-14T13:13:37Z"
         }
       ]
     }
@@ -195,24 +202,26 @@
       "id": "PR_kwDONEpyw85_uwew",
       "title": "Set recommended to N",
       "url": "https://github.com/bwesterb/tls-mldsa/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "bwesterb",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Suggested by @emanjon",
       "createdAt": "2024-10-24T07:59:07Z",
-      "updatedAt": "2024-10-24T07:59:07Z",
+      "updatedAt": "2024-11-15T10:45:38Z",
       "baseRepository": "bwesterb/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
       "headRepository": "bwesterb/tls-mldsa",
       "headRefName": "bas/recn",
       "headRefOid": "16c6c49ae03e70d094705b2d7c1d3b714c6d8f74",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-11-15T10:45:38Z",
+      "mergedAt": "2024-11-15T10:45:38Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "47ac48c620c2de73559ed833aea8244361e3bb2c"
+      },
       "comments": [],
       "reviews": []
     },
@@ -221,24 +230,26 @@
       "id": "PR_kwDONEpyw85_wg1L",
       "title": "Be explicit about the way the signature is to be computed and verified",
       "url": "https://github.com/bwesterb/tls-mldsa/pull/6",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "tomato42",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "As the context string is already part of the message signed, it's related to the lack of the context string from the paragraph above.",
       "createdAt": "2024-10-24T11:35:56Z",
-      "updatedAt": "2024-10-24T13:23:12Z",
+      "updatedAt": "2024-11-15T15:17:34Z",
       "baseRepository": "bwesterb/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
       "headRepository": "tomato42/tls-mldsa",
       "headRefName": "explicit-what-sign",
       "headRefOid": "d763c8012df333b54162b50d60a4ac06154c8d22",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-11-15T10:45:52Z",
+      "mergedAt": "2024-11-15T10:45:52Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "4b650e680386aabf7d1f7a0b287e89e9dcd63c5a"
+      },
       "comments": [],
       "reviews": [
         {
@@ -274,24 +285,26 @@
       "id": "PR_kwDONEpyw85_wjh-",
       "title": "make it explicit that those are not for TLS 1.2",
       "url": "https://github.com/bwesterb/tls-mldsa/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "tomato42",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "in context of https://datatracker.ietf.org/doc/draft-ietf-tls-tls12-frozen/, we should be explicit that those new schemes MUST NOT be used in TLS 1.2",
       "createdAt": "2024-10-24T11:41:48Z",
-      "updatedAt": "2024-10-24T13:22:45Z",
+      "updatedAt": "2024-11-15T15:17:57Z",
       "baseRepository": "bwesterb/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
       "headRepository": "tomato42/tls-mldsa",
       "headRefName": "no-tls12",
       "headRefOid": "96295207e48b15ed81cf44661c28bb165760c81f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-11-15T10:46:14Z",
+      "mergedAt": "2024-11-15T10:46:14Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "abd2c5889299e363c5f90463936eac03978868e6"
+      },
       "comments": [],
       "reviews": [
         {
