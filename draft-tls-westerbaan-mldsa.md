@@ -56,9 +56,8 @@ is used for authentication in TLS 1.3.
 
 # Introduction
 
-ML-DSA {{!FIPS204=DOI.10.6028/NIST.FIPS.204}} is a
-post-quantum signature schemes standardised by NIST. It is a
-module-lattice based scheme.
+ML-DSA is a post-quantum module-lattice based digital signature algorothm
+standardised by NIST in {{!FIPS204=DOI.10.6028/NIST.FIPS.204}}.
 
 This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
 via the "signature_algorithms" and "signature_algorithms_cert" extensions.
@@ -83,14 +82,14 @@ enum {
 ~~~
 
 These correspond to ML-DSA-44, ML-DSA-65, and ML-DSA-87 defined
-in {{FIPS204}} respectively. Note that these are the pure versions and should not be confused
-with prehashed variants such as HashML-DSA-44 also defined in {{FIPS204}}.
-
-Similarly, the context parameter defined in {{FIPS204}} Algorithm 2/Algorithm 3
-MUST be the empty string.
+in {{FIPS204}} respectively. Note that these are different
+from the HashML-DSA pre-hashed variantsadefined in Section 5.4 of {{FIPS204}}.
 
 The signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}.
+
+The context parameter defined in {{FIPS204}} Algorithm 2 and 3
+MUST be the empty string.
 
 The corresponding end-entity certificate when negotiated MUST
 use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
@@ -122,4 +121,5 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 # Acknowledgments
 {:numbered="false"}
 
-Thanks to Alicja Kario and John Mattsson for their review and feedback.
+Thanks to Alicja Kario, John Mattsson, and Rebecca Guthrie
+    for their review and feedback.
