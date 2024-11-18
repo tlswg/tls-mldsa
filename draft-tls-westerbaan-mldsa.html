@@ -1085,7 +1085,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Hollebeek, et al.</td>
-<td class="center">Expires 19 May 2025</td>
+<td class="center">Expires 22 May 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1098,12 +1098,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-tls-westerbaan-mldsa-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-11-15" class="published">15 November 2024</time>
+<time datetime="2024-11-18" class="published">18 November 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-05-19">19 May 2025</time></dd>
+<dd class="expires"><time datetime="2025-05-22">22 May 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1157,7 +1157,7 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1227,9 +1227,8 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">ML-DSA <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> is a
-post-quantum signature schemes standardised by NIST. It is a
-module-lattice based scheme.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">ML-DSA is a post-quantum module-lattice based digital signature algorothm
+standardised by NIST in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
 via the "signature_algorithms" and "signature_algorithms_cert" extensions.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
@@ -1265,12 +1264,12 @@ enum {
 </pre><a href="#section-3-2" class="pilcrow">¶</a>
 </div>
 <p id="section-3-3">These correspond to ML-DSA-44, ML-DSA-65, and ML-DSA-87 defined
-in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> respectively. Note that these are the pure versions and should not be confused
-with prehashed variants such as HashML-DSA-44 also defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
-<p id="section-3-4">Similarly, the context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2/Algorithm 3
-<span class="bcp14">MUST</span> be the empty string.<a href="#section-3-4" class="pilcrow">¶</a></p>
-<p id="section-3-5">The signature <span class="bcp14">MUST</span> be computed and verified as specified in
-<span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-3-5" class="pilcrow">¶</a></p>
+in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> respectively. Note that these are different
+from the HashML-DSA pre-hashed variantsadefined in Section 5.4 of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">The signature <span class="bcp14">MUST</span> be computed and verified as specified in
+<span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-5">The context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2 and 3
+<span class="bcp14">MUST</span> be the empty string.<a href="#section-3-5" class="pilcrow">¶</a></p>
 <p id="section-3-6">The corresponding end-entity certificate when negotiated <span class="bcp14">MUST</span>
 use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
 defined in <span>[<a href="#I-D.ietf-lamps-dilithium-certificates" class="cite xref">I-D.ietf-lamps-dilithium-certificates</a>]</span>.<a href="#section-3-6" class="pilcrow">¶</a></p>
@@ -1386,7 +1385,8 @@ according to the procedures in <span><a href="https://datatracker.ietf.org/doc/h
       <h2 id="name-acknowledgments">
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
-<p id="appendix-A-1">Thanks to Alicja Kario and John Mattsson for their review and feedback.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-1">Thanks to Alicja Kario, John Mattsson, and Rebecca Guthrie
+    for their review and feedback.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
