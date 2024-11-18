@@ -1,6 +1,6 @@
-# ML-DSA for TLS
+# ML-DSA for TLS 1.3
 
-This is the working area for the individual Internet-Draft, "ML-DSA for TLS".
+This is the working area for the individual Internet-Draft, "ML-DSA for TLS 1.3".
 
 * [Editor's Copy](https://bwesterb.github.io/tls-mldsa/#go.draft-tls-westerbaan-mldsa.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-tls-westerbaan-mldsa)
