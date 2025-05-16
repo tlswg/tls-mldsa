@@ -198,8 +198,8 @@ Table of Contents
 
 Acknowledgments
 
-   Thanks to Alicja Kario, John Mattsson, and Rebecca Guthrie for their
-   review and feedback.
+   Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, and Alexander
+   Bokovoy for their review and feedback.
 
 Authors' Addresses
 
