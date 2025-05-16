@@ -121,5 +121,5 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 # Acknowledgments
 {:numbered="false"}
 
-Thanks to Alicja Kario, John Mattsson, and Rebecca Guthrie
+Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, and Alexander Bokovoy
     for their review and feedback.
