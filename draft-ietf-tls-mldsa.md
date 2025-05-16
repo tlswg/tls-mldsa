@@ -19,8 +19,8 @@ venue:
   type: "Working Group"
   mail: "tls@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/tls/"
-  github: "bwesterb/tls-mldsa"
-  latest: "https://bwesterb.github.io/tls-mldsa/draft-ietf-tls-mldsa.html"
+  github: "tlswg/tls-mldsa"
+  latest: "https://tlswg.github.io/tls-mldsa/draft-ietf-tls-mldsa.html"
 
 author:
  -

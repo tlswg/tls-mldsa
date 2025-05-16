@@ -2,16 +2,16 @@
 
 This is the working area for the Internet-Draft, "ML-DSA for TLS 1.3" adopted by the [TLS IETF working group](https://datatracker.ietf.org/wg/tls/about/).
 
-* [Editor's Copy](https://bwesterb.github.io/tls-mldsa/#go.draft-ietf-tls-mldsa.html)
+* [Editor's Copy](https://tlswg.github.io/tls-mldsa/#go.draft-ietf-tls-mldsa.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-tls-mldsa)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-ietf-tls-mldsa)
-* [Compare Editor's Copy to Individual Draft](https://bwesterb.github.io/tls-mldsa/#go.draft-ietf-tls-mldsa.diff)
+* [Compare Editor's Copy to Individual Draft](https://tlswg.github.io/tls-mldsa/#go.draft-ietf-tls-mldsa.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/bwesterb/tls-mldsa/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/tlswg/tls-mldsa/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.

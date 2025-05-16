@@ -1,4 +1,4 @@
 # License
 
 See the
-[guidelines for contributions](https://github.com/bwesterb/tls-mldsa/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/tlswg/tls-mldsa/blob/main/CONTRIBUTING.md).
