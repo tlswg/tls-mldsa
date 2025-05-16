@@ -18,7 +18,6 @@ venue:
   group: "Transport Layer Security"
   type: "Working Group"
   mail: "tls@ietf.org"
-  arch: https://example.com/WG
   arch: "https://mailarchive.ietf.org/arch/browse/tls/"
   github: "bwesterb/tls-mldsa"
   latest: "https://bwesterb.github.io/tls-mldsa/draft-ietf-tls-mldsa.html"
