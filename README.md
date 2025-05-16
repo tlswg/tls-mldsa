@@ -1,6 +1,6 @@
 # ML-DSA for TLS 1.3
 
-This is the working area for the individual Internet-Draft, "ML-DSA for TLS 1.3".
+This is the working area for the Internet-Draft, "ML-DSA for TLS 1.3" adopted by the [TLS IETF working group](https://datatracker.ietf.org/wg/tls/about/).
 
 * [Editor's Copy](https://bwesterb.github.io/tls-mldsa/#go.draft-ietf-tls-mldsa.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-tls-mldsa)
