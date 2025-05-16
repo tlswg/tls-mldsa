@@ -84,7 +84,7 @@ enum {
 
 These correspond to ML-DSA-44, ML-DSA-65, and ML-DSA-87 defined
 in {{FIPS204}} respectively. Note that these are different
-from the HashML-DSA pre-hashed variantsadefined in Section 5.4 of {{FIPS204}}.
+from the HashML-DSA pre-hashed variants defined in Section 5.4 of {{FIPS204}}.
 
 The signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}.
