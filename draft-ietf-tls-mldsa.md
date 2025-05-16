@@ -3,24 +3,25 @@ title: "Use of ML-DSA in TLS 1.3"
 abbrev: "Use of ML-DSA in TLS 1.3"
 category: info
 
-docname: draft-tls-westerbaan-mldsa-latest
+docname: draft-ietf-tls-mldsa-latest
 submissiontype: IETF
 number:
 date:
 consensus: true
 v: 3
-# area: AREA
-# workgroup: WG Working Group
+area: Security
+workgroup: Transport Layer Security§
 keyword:
  - ML-DSA
  - FIPS204
 venue:
-#  group: WG
-#  type: Working Group
-#  mail: WG@example.com
-#  arch: https://example.com/WG
+  group: "Transport Layer Security"
+  type: "Working Group"
+  mail: "tls@ietf.org"
+  arch: https://example.com/WG
+  arch: "https://mailarchive.ietf.org/arch/browse/tls/"
   github: "bwesterb/tls-mldsa"
-  latest: "https://bwesterb.github.io/tls-mldsa/draft-tls-westerbaan-mldsa.html"
+  latest: "https://bwesterb.github.io/tls-mldsa/draft-ietf-tls-mldsa.html"
 
 author:
  -

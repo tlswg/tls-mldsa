@@ -17,7 +17,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-tls-westerbaan-mldsa.xml
+draft-ietf-tls-mldsa.xml
 package-lock.json
 report.xml
 !requirements.txt

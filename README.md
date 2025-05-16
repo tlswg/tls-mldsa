@@ -2,10 +2,10 @@
 
 This is the working area for the individual Internet-Draft, "ML-DSA for TLS 1.3".
 
-* [Editor's Copy](https://bwesterb.github.io/tls-mldsa/#go.draft-tls-westerbaan-mldsa.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-tls-westerbaan-mldsa)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-tls-westerbaan-mldsa)
-* [Compare Editor's Copy to Individual Draft](https://bwesterb.github.io/tls-mldsa/#go.draft-tls-westerbaan-mldsa.diff)
+* [Editor's Copy](https://bwesterb.github.io/tls-mldsa/#go.draft-ietf-tls-mldsa.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-tls-mldsa)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-ietf-tls-mldsa)
+* [Compare Editor's Copy to Individual Draft](https://bwesterb.github.io/tls-mldsa/#go.draft-ietf-tls-mldsa.diff)
 
 
 ## Contributing
