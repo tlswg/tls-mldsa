@@ -115,15 +115,20 @@ Table of Contents
    [FIPS204] respectively.  Note that these are different from the
    HashML-DSA pre-hashed variants defined in Section 5.4 of [FIPS204].
 
-   The signature MUST be computed and verified as specified in
-   Section 4.4.3 of [RFC8446].
+   If one of those SignatureSchemes values is used in a
+   CertificateVerify message, then the signature MUST be computed and
+   verified as specified in Section 4.4.3 of [RFC8446], and the
+   corresponding end-entity certificate MUST use id-ML-DSA-44, id-ML-
+   DSA-65, id-ML-DSA-87 respectively as defined in
+   [I-D.ietf-lamps-dilithium-certificates].
 
    The context parameter defined in [FIPS204] Algorithm 2 and 3 MUST be
    the empty string.
 
-   The corresponding end-entity certificate when negotiated MUST use id-
-   ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as defined in
-   [I-D.ietf-lamps-dilithium-certificates].
+   Presence of those schemes in "signature_algorithms_cert" or
+   "signature_algorithms" (when the former is not sent) indicates
+   support for certificates signed by those algorithms in the
+   Certificate message, as specified in Section 4.2.4 of [RFC8446].
 
    The schemes defined in this document MUST NOT be used in TLS 1.2
    [RFC5246].  A peer that receives ServerKeyExchange or
