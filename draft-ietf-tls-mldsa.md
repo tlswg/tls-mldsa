@@ -42,7 +42,7 @@ informative:
  RFC5246:
  RFC8446:
  TLSIANA: I-D.ietf-tls-rfc8447bis
- I-D.ietf-lamps-dilithium-certificates:
+ MLDSACERTS: I-D.ietf-lamps-dilithium-certificates
 
 
 
@@ -60,45 +60,46 @@ ML-DSA is a post-quantum module-lattice based digital signature algorothm
 standardised by NIST in {{!FIPS204=DOI.10.6028/NIST.FIPS.204}}.
 
 This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
-via the "signature_algorithms" and "signature_algorithms_cert" extensions.
+via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
-# ML-DSA SignatureSchemes Types
+# ML-DSA SignatureScheme values
+
 As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
-"signature_algorithms" and "signature_algorithms_cert" extensions.
-This document adds three new SignatureSchemes
-types for the three ML-DSA parameter sets as follows.
+`signature_algorithms` and `signature_algorithms_cert` extensions.
+This document adds three new SignatureScheme values for the three
+ML-DSA parameter sets from {{FIPS204}} as follows.
 
-~~~
-enum {
-  mldsa44(0x0904),
-  mldsa65(0x0905),
-  mldsa87(0x0906)
-} SignatureScheme;
-~~~
+| SignatureScheme | FIPS 204  | Certificate AlgorithmIdentifier |
+|-----------------|-----------|---------------------------------|
+| mldsa44(0x0904) | ML-DSA-44 | id-ML-DSA-44                    |
+| mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-64                    |
+| mldsa87(0x0906) | ML-DSA-87 | id-ML-DSA-87                    |
+{: #schemes title="SignatureSchemes for ML-DSA" }
 
-These correspond to ML-DSA-44, ML-DSA-65, and ML-DSA-87 defined
-in {{FIPS204}} respectively. Note that these are different
-from the HashML-DSA pre-hashed variants defined in Section 5.4 of {{FIPS204}}.
+Note that these are different from the HashML-DSA pre-hashed
+variants defined in Section 5.4 of {{FIPS204}}.
 
-If one of those SignatureSchemes values is used in a CertificateVerify message,
+## Certificate chain
+For the purpose of signalling support for signatures on certificates
+as per {{Section 4.2.4 of RFC8446}}, these values indicate support
+for signing using the given AlgorithmIdentifier shown in {{schemes}}
+as defined in {{MLDSACERTS}}.
+
+## Handshake signature
+When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
-{{Section 4.4.3 of RFC8446}}, and the corresponding end-entity certificate MUST
-use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
-defined in {{I-D.ietf-lamps-dilithium-certificates}}.
+{{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
+certificate MUST use the corresponding AlgorithmIdentifier from {{schemes}}.
 
 The context parameter defined in {{FIPS204}} Algorithm 2 and 3
 MUST be the empty string.
 
-Presence of those schemes in "signature_algorithms_cert" or
-"signature_algorithms" (when the former is not sent) indicates support
-for certificates signed by those algorithms in the Certificate message,
-as specified in {{Section 4.2.4 of RFC8446}}.
-
+## TLS 1.2
 The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}.
 A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
 1.2 connection with schemes defined in this document MUST abort the connection
