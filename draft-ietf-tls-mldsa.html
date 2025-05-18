@@ -24,7 +24,7 @@ is used for authentication in TLS 1.3.
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.0
-    platformdirs 4.3.7
+    platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
@@ -1052,7 +1052,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Hollebeek, et al.</td>
-<td class="center">Expires 17 November 2025</td>
+<td class="center">Expires 19 November 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1065,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-tls-mldsa-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-05-16" class="published">16 May 2025</time>
+<time datetime="2025-05-18" class="published">18 May 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-11-17">17 November 2025</time></dd>
+<dd class="expires"><time datetime="2025-11-19">19 November 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1129,7 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 17 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 19 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1165,7 +1165,18 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-ml-dsa-signatureschemes-typ" class="internal xref">ML-DSA SignatureSchemes Types</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-ml-dsa-signaturescheme-valu" class="internal xref">ML-DSA SignatureScheme values</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-certificate-chain" class="internal xref">Certificate chain</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-handshake-signature" class="internal xref">Handshake signature</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
+                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-tls-12" class="internal xref">TLS 1.2</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
@@ -1202,7 +1213,7 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
 <p id="section-1-1">ML-DSA is a post-quantum module-lattice based digital signature algorothm
 standardised by NIST in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
-via the "signature_algorithms" and "signature_algorithms_cert" extensions.<a href="#section-1-2" class="pilcrow">¶</a></p>
+via the <code>signature_algorithms</code> and <code>signature_algorithms_cert</code> extensions.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1216,43 +1227,85 @@ described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</s
 appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="ml-dsa-signatureschemes-types">
+<div id="ml-dsa-signaturescheme-values">
 <section id="section-3">
-      <h2 id="name-ml-dsa-signatureschemes-typ">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-ml-dsa-signatureschemes-typ" class="section-name selfRef">ML-DSA SignatureSchemes Types</a>
+      <h2 id="name-ml-dsa-signaturescheme-valu">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-ml-dsa-signaturescheme-valu" class="section-name selfRef">ML-DSA SignatureScheme values</a>
       </h2>
 <p id="section-3-1">As defined in <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
-"signature_algorithms" and "signature_algorithms_cert" extensions.
-This document adds three new SignatureSchemes
-types for the three ML-DSA parameter sets as follows.<a href="#section-3-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-3-2">
-<pre>
-enum {
-  mldsa44(0x0904),
-  mldsa65(0x0905),
-  mldsa87(0x0906)
-} SignatureScheme;
-</pre><a href="#section-3-2" class="pilcrow">¶</a>
+<code>signature_algorithms</code> and <code>signature_algorithms_cert</code> extensions.
+This document adds three new SignatureScheme values for the three
+ML-DSA parameter sets from <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> as follows.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<span id="name-signatureschemes-for-ml-dsa"></span><div id="schemes">
+<table class="center" id="table-1">
+        <caption>
+<a href="#table-1" class="selfRef">Table 1</a>:
+<a href="#name-signatureschemes-for-ml-dsa" class="selfRef">SignatureSchemes for ML-DSA</a>
+        </caption>
+<thead>
+          <tr>
+            <th class="text-left" rowspan="1" colspan="1">SignatureScheme</th>
+            <th class="text-left" rowspan="1" colspan="1">FIPS 204</th>
+            <th class="text-left" rowspan="1" colspan="1">Certificate AlgorithmIdentifier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">mldsa44(0x0904)</td>
+            <td class="text-left" rowspan="1" colspan="1">ML-DSA-44</td>
+            <td class="text-left" rowspan="1" colspan="1">id-ML-DSA-44</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">mldsa65(0x0905)</td>
+            <td class="text-left" rowspan="1" colspan="1">ML-DSA-65</td>
+            <td class="text-left" rowspan="1" colspan="1">id-ML-DSA-64</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">mldsa87(0x0906)</td>
+            <td class="text-left" rowspan="1" colspan="1">ML-DSA-87</td>
+            <td class="text-left" rowspan="1" colspan="1">id-ML-DSA-87</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
-<p id="section-3-3">These correspond to ML-DSA-44, ML-DSA-65, and ML-DSA-87 defined
-in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> respectively. Note that these are different
-from the HashML-DSA pre-hashed variants defined in Section 5.4 of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
-<p id="section-3-4">If one of those SignatureSchemes values is used in a CertificateVerify message,
+<p id="section-3-3">Note that these are different from the HashML-DSA pre-hashed
+variants defined in Section 5.4 of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<div id="certificate-chain">
+<section id="section-3.1">
+        <h3 id="name-certificate-chain">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-certificate-chain" class="section-name selfRef">Certificate chain</a>
+        </h3>
+<p id="section-3.1-1">For the purpose of signalling support for signatures on certificates
+as per <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.2.4" class="relref">Section 4.2.4</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, these values indicate support
+for signing using the given AlgorithmIdentifier shown in <a href="#schemes" class="auto internal xref">Table 1</a>
+as defined in <span>[<a href="#MLDSACERTS" class="cite xref">MLDSACERTS</a>]</span>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="handshake-signature">
+<section id="section-3.2">
+        <h3 id="name-handshake-signature">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-handshake-signature" class="section-name selfRef">Handshake signature</a>
+        </h3>
+<p id="section-3.2-1">When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature <span class="bcp14">MUST</span> be computed and verified as specified in
-<span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, and the corresponding end-entity certificate <span class="bcp14">MUST</span>
-use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as
-defined in <span>[<a href="#I-D.ietf-lamps-dilithium-certificates" class="cite xref">I-D.ietf-lamps-dilithium-certificates</a>]</span>.<a href="#section-3-4" class="pilcrow">¶</a></p>
-<p id="section-3-5">The context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2 and 3
-<span class="bcp14">MUST</span> be the empty string.<a href="#section-3-5" class="pilcrow">¶</a></p>
-<p id="section-3-6">Presence of those schemes in "signature_algorithms_cert" or
-"signature_algorithms" (when the former is not sent) indicates support
-for certificates signed by those algorithms in the Certificate message,
-as specified in <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.2.4" class="relref">Section 4.2.4</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-3-6" class="pilcrow">¶</a></p>
-<p id="section-3-7">The schemes defined in this document <span class="bcp14">MUST NOT</span> be used in TLS 1.2 <span>[<a href="#RFC5246" class="cite xref">RFC5246</a>]</span>.
+<span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, and the corresponding end-entity
+certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier from <a href="#schemes" class="auto internal xref">Table 1</a>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">The context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2 and 3
+<span class="bcp14">MUST</span> be the empty string.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="tls-12">
+<section id="section-3.3">
+        <h3 id="name-tls-12">
+<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-tls-12" class="section-name selfRef">TLS 1.2</a>
+        </h3>
+<p id="section-3.3-1">The schemes defined in this document <span class="bcp14">MUST NOT</span> be used in TLS 1.2 <span>[<a href="#RFC5246" class="cite xref">RFC5246</a>]</span>.
 A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
 1.2 connection with schemes defined in this document <span class="bcp14">MUST</span> abort the connection
-with an illegal_parameter alert.<a href="#section-3-7" class="pilcrow">¶</a></p>
+with an illegal_parameter alert.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="security-considerations">
@@ -1270,8 +1323,8 @@ with an illegal_parameter alert.<a href="#section-3-7" class="pilcrow">¶</a></p
       </h2>
 <p id="section-5-1">This document requests new entries to the TLS SignatureScheme registry,
 according to the procedures in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-12#section-6" class="relref">Section 6</a> of [<a href="#TLSIANA" class="cite xref">TLSIANA</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-1">
-        <caption><a href="#table-1" class="selfRef">Table 1</a></caption>
+<table class="center" id="table-2">
+        <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
 <thead>
           <tr>
             <th class="text-left" rowspan="1" colspan="1">Value</th>
@@ -1335,7 +1388,7 @@ according to the procedures in <span><a href="https://datatracker.ietf.org/doc/h
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="I-D.ietf-lamps-dilithium-certificates">[I-D.ietf-lamps-dilithium-certificates]</dt>
+<dt id="MLDSACERTS">[MLDSACERTS]</dt>
         <dd>
 <span class="refAuthor">Massimo, J.</span>, <span class="refAuthor">Kampanakis, P.</span>, <span class="refAuthor">Turner, S.</span>, and <span class="refAuthor">B. Westerbaan</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure - Algorithm Identifiers for the Module-Lattice-Based Digital Signature Algorithm (ML-DSA)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-dilithium-certificates-09</span>, <time datetime="2025-05-07" class="refDate">7 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-09">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-09</a>&gt;</span>. </dd>
 <dd class="break"></dd>
