@@ -6,7 +6,7 @@ Transport Layer Security§                                   T. Hollebeek
 Internet-Draft                                                  DigiCert
 Intended status: Informational                                S. Schmieg
 Expires: 19 November 2025                                         Google
-                                                           B. Westerbaan
+                                                        B. E. Westerbaan
                                                               Cloudflare
                                                              18 May 2025
 
@@ -158,17 +158,17 @@ Table of Contents
    This document requests new entries to the TLS SignatureScheme
    registry, according to the procedures in Section 6 of [TLSIANA].
 
-     +=================+=============+=============+================+
-     | Value           | Description | Recommended | Reference      |
-     +=================+=============+=============+================+
-     | 0x0904 (please) | mldsa44     | N           | This document. |
-     +-----------------+-------------+-------------+----------------+
-     | 0x0905 (please) | mldsa65     | N           | This document. |
-     +-----------------+-------------+-------------+----------------+
-     | 0x0906 (please) | mldsa87     | N           | This document. |
-     +-----------------+-------------+-------------+----------------+
+          +========+=============+=============+================+
+          | Value  | Description | Recommended | Reference      |
+          +========+=============+=============+================+
+          | 0x0904 | mldsa44     | N           | This document. |
+          +--------+-------------+-------------+----------------+
+          | 0x0905 | mldsa65     | N           | This document. |
+          +--------+-------------+-------------+----------------+
+          | 0x0906 | mldsa87     | N           | This document. |
+          +--------+-------------+-------------+----------------+
 
-                                 Table 2
+                                  Table 2
 
 6.  References
 
