@@ -1,7 +1,7 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-01T01:04:47.038487+00:00",
-  "repo": "bwesterb/tls-mldsa",
+  "timestamp": "2025-05-18T01:05:47.367106+00:00",
+  "repo": "tlswg/tls-mldsa",
   "labels": [
     {
       "name": "bug",
@@ -54,10 +54,10 @@
       "number": 1,
       "id": "I_kwDONEpyw86bfguA",
       "title": "Context string",
-      "url": "https://github.com/bwesterb/tls-mldsa/issues/1",
+      "url": "https://github.com/tlswg/tls-mldsa/issues/1",
       "state": "OPEN",
       "author": "bwesterb",
-      "authorAssociation": "OWNER",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "There is an argument to be made to set the context string to a fixed constant like \"TLS1.3\" to nudge cryptographic libraries to support context parameters more widely.",
@@ -67,7 +67,7 @@
       "comments": [
         {
           "author": "bwesterb",
-          "authorAssociation": "OWNER",
+          "authorAssociation": "COLLABORATOR",
           "body": "[Ilari](https://mailarchive.ietf.org/arch/msg/spasm/eC-eip8u70o2mqFw90drPt2AEko/)\r\n\r\n> I did some explorative coding on using nontrivial context for TLS 1.3\r\n> signatures (which have further contextualization of their own) and\r\n> discovered that version-specific or even TLS specific context would\r\n> cause issues with delegated credentials (and other similar things).\r\n> So context should be assigned to the construct as whole, not to its\r\n> use in TLS 1.3 or even to its use in TLS (the further\r\n> contextualization will separate those if needed).",
           "createdAt": "2024-10-31T11:20:27Z",
           "updatedAt": "2024-10-31T11:20:27Z"
@@ -87,7 +87,7 @@
       "number": 2,
       "id": "PR_kwDONEpyw85_qCRV",
       "title": "sig_alg MUST match the EE SPKI",
-      "url": "https://github.com/bwesterb/tls-mldsa/pull/2",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/2",
       "state": "MERGED",
       "author": "tomato42",
       "authorAssociation": "CONTRIBUTOR",
@@ -96,7 +96,7 @@
       "body": "",
       "createdAt": "2024-10-23T17:59:38Z",
       "updatedAt": "2024-10-23T21:59:01Z",
-      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRepository": "tlswg/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "325a0dcb496e63a8bfe078cd86391e8dc1c4bfa8",
       "headRepository": "tomato42/tls-mldsa",
@@ -111,7 +111,7 @@
       "comments": [
         {
           "author": "bwesterb",
-          "authorAssociation": "OWNER",
+          "authorAssociation": "COLLABORATOR",
           "body": "Thanks.",
           "createdAt": "2024-10-23T20:09:00Z",
           "updatedAt": "2024-10-23T20:09:00Z"
@@ -123,7 +123,7 @@
       "number": 3,
       "id": "PR_kwDONEpyw85_qCrz",
       "title": "Minor suggestions",
-      "url": "https://github.com/bwesterb/tls-mldsa/pull/3",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/3",
       "state": "MERGED",
       "author": "emanjon",
       "authorAssociation": "CONTRIBUTOR",
@@ -132,7 +132,7 @@
       "body": "- NIST already standardized the PQC signature algorithms XMSS and LMS\r\n- Removed the word \"we\", which is unclear in standards. \r\n- The registry name is TLS SignatureScheme.\r\n- I assume this should be for \"signature_algorithms_cert\" as well",
       "createdAt": "2024-10-23T18:00:13Z",
       "updatedAt": "2024-10-23T20:12:05Z",
-      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRepository": "tlswg/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "325a0dcb496e63a8bfe078cd86391e8dc1c4bfa8",
       "headRepository": "emanjon/tls-mldsa",
@@ -147,7 +147,7 @@
       "comments": [
         {
           "author": "bwesterb",
-          "authorAssociation": "OWNER",
+          "authorAssociation": "COLLABORATOR",
           "body": "Thanks.",
           "createdAt": "2024-10-23T20:09:54Z",
           "updatedAt": "2024-10-23T20:09:54Z"
@@ -173,7 +173,7 @@
       "number": 4,
       "id": "PR_kwDONEpyw85_qZ1X",
       "title": "fix typo in the name of ML-DSA-65",
-      "url": "https://github.com/bwesterb/tls-mldsa/pull/4",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/4",
       "state": "MERGED",
       "author": "tomato42",
       "authorAssociation": "CONTRIBUTOR",
@@ -182,7 +182,7 @@
       "body": "The algorithm is ML-DSA-65, not ML-DSA-64",
       "createdAt": "2024-10-23T18:33:59Z",
       "updatedAt": "2024-10-23T22:00:16Z",
-      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRepository": "tlswg/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "d8baf038555efb3089ef75c8bdc049cfbc35ae1d",
       "headRepository": "tomato42/tls-mldsa",
@@ -201,19 +201,19 @@
       "number": 5,
       "id": "PR_kwDONEpyw85_uwew",
       "title": "Set recommended to N",
-      "url": "https://github.com/bwesterb/tls-mldsa/pull/5",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/5",
       "state": "MERGED",
       "author": "bwesterb",
-      "authorAssociation": "OWNER",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Suggested by @emanjon",
       "createdAt": "2024-10-24T07:59:07Z",
       "updatedAt": "2024-11-15T10:45:38Z",
-      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRepository": "tlswg/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
-      "headRepository": "bwesterb/tls-mldsa",
+      "headRepository": "tlswg/tls-mldsa",
       "headRefName": "bas/recn",
       "headRefOid": "16c6c49ae03e70d094705b2d7c1d3b714c6d8f74",
       "closedAt": "2024-11-15T10:45:38Z",
@@ -229,7 +229,7 @@
       "number": 6,
       "id": "PR_kwDONEpyw85_wg1L",
       "title": "Be explicit about the way the signature is to be computed and verified",
-      "url": "https://github.com/bwesterb/tls-mldsa/pull/6",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/6",
       "state": "MERGED",
       "author": "tomato42",
       "authorAssociation": "CONTRIBUTOR",
@@ -238,7 +238,7 @@
       "body": "As the context string is already part of the message signed, it's related to the lack of the context string from the paragraph above.",
       "createdAt": "2024-10-24T11:35:56Z",
       "updatedAt": "2024-11-15T15:17:34Z",
-      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRepository": "tlswg/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
       "headRepository": "tomato42/tls-mldsa",
@@ -258,7 +258,7 @@
             "abbreviatedOid": "d763c80"
           },
           "author": "bwesterb",
-          "authorAssociation": "OWNER",
+          "authorAssociation": "COLLABORATOR",
           "state": "APPROVED",
           "body": "",
           "createdAt": "2024-10-24T12:23:54Z",
@@ -284,7 +284,7 @@
       "number": 7,
       "id": "PR_kwDONEpyw85_wjh-",
       "title": "make it explicit that those are not for TLS 1.2",
-      "url": "https://github.com/bwesterb/tls-mldsa/pull/7",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/7",
       "state": "MERGED",
       "author": "tomato42",
       "authorAssociation": "CONTRIBUTOR",
@@ -293,7 +293,7 @@
       "body": "in context of https://datatracker.ietf.org/doc/draft-ietf-tls-tls12-frozen/, we should be explicit that those new schemes MUST NOT be used in TLS 1.2",
       "createdAt": "2024-10-24T11:41:48Z",
       "updatedAt": "2024-11-15T15:17:57Z",
-      "baseRepository": "bwesterb/tls-mldsa",
+      "baseRepository": "tlswg/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "cee810817c0ff24df3cf80619f63d9993a03e178",
       "headRepository": "tomato42/tls-mldsa",
@@ -313,7 +313,7 @@
             "abbreviatedOid": "9629520"
           },
           "author": "bwesterb",
-          "authorAssociation": "OWNER",
+          "authorAssociation": "COLLABORATOR",
           "state": "APPROVED",
           "body": "",
           "createdAt": "2024-10-24T12:24:21Z",
@@ -331,6 +331,272 @@
           "body": "",
           "createdAt": "2024-10-24T13:22:45Z",
           "updatedAt": "2024-10-24T13:22:45Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDONEpyw86WcywB",
+      "title": "Small updates",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/8",
+      "state": "OPEN",
+      "author": "bwesterb",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-05-16T09:56:26Z",
+      "updatedAt": "2025-05-16T09:56:26Z",
+      "baseRepository": "tlswg/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "a043ee3e9e6578b754f7041f472c4264eb73cd78",
+      "headRepository": "tlswg/tls-mldsa",
+      "headRefName": "bas/small-updates",
+      "headRefOid": "26271d77993d2bf3f344752e9b8edf85e56c9478",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDONEpyw86WdCg1",
+      "title": "Add initial security consideration text.",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/9",
+      "state": "OPEN",
+      "author": "loganaden",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Add initial security consideration text.",
+      "createdAt": "2025-05-16T10:28:23Z",
+      "updatedAt": "2025-05-16T14:44:56Z",
+      "baseRepository": "tlswg/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "48931e8f6092d15a343f2ef85aa2e09d4045b573",
+      "headRepository": "cyberstormdotmu/tls-mldsa",
+      "headRefName": "loganaden-tls-mldsa",
+      "headRefOid": "213726439b52d5f007264c94d973ff9db8ee13c9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONEpyw86pr7BQ",
+          "commit": {
+            "abbreviatedOid": "2137264"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-16T14:44:55Z",
+          "updatedAt": "2025-05-16T14:44:56Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "These remarks are not specific to ML-DSA. It'd be better to find a reference.",
+              "createdAt": "2025-05-16T14:44:55Z",
+              "updatedAt": "2025-05-16T14:44:56Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDONEpyw86WdXSa",
+      "title": "fix a trivial typo ('a' instead of ' ')",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/10",
+      "state": "MERGED",
+      "author": "tomato42",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Thanks Alexander Bokovoy for spotting it",
+      "createdAt": "2025-05-16T11:13:54Z",
+      "updatedAt": "2025-05-16T12:53:29Z",
+      "baseRepository": "tlswg/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "48931e8f6092d15a343f2ef85aa2e09d4045b573",
+      "headRepository": "tomato42/tls-mldsa",
+      "headRefName": "fix-typo",
+      "headRefOid": "f54abe31da44a9a47c83bd7e0e195ba94109e633",
+      "closedAt": "2025-05-16T11:51:51Z",
+      "mergedAt": "2025-05-16T11:51:51Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "0ad20797e34a7d7b0c9d40068d9f8a5e83aa73d7"
+      },
+      "comments": [
+        {
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks.",
+          "createdAt": "2025-05-16T11:51:37Z",
+          "updatedAt": "2025-05-16T11:51:37Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDONEpyw86Wddol",
+      "title": "it's not just CertificateVerify where we can use ML-DSA",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/11",
+      "state": "MERGED",
+      "author": "tomato42",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "1. the certificate needs to have a id-ML-DSA-{44,65,87} OID _only_ if the signature algorithm is actually used in CertificateVerify\r\n2. the presence of the schemes means that certificates with id-ML-DSA-{44,65,87} _signatures_ are also allowed in Certificate message",
+      "createdAt": "2025-05-16T11:27:15Z",
+      "updatedAt": "2025-05-16T19:09:33Z",
+      "baseRepository": "tlswg/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "0d0b9915ae6e764442b6fb7dfe5c103402b1b0d1",
+      "headRepository": "tomato42/tls-mldsa",
+      "headRefName": "explicit-usage-and-certificates",
+      "headRefOid": "aaea70bd201fd0a4453ca947b0f0b25378a1c80f",
+      "closedAt": "2025-05-16T13:57:56Z",
+      "mergedAt": "2025-05-16T13:57:56Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "96a1d8c6c451f81cc84ec59f432b474506dfef55"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONEpyw86pqS22",
+          "commit": {
+            "abbreviatedOid": "82acd82"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-16T12:08:39Z",
+          "updatedAt": "2025-05-16T12:08:39Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "Perhaps better to merge the paragraphs as\r\n\r\n> If one of those SignatureSchemes values is used in a CertificateVerify message,\r\n> then the signature MUST be computed and verified as specified in\r\n> {{Section 4.4.3 of RFC8446}}, and the corresponding end-entity certificate MUST\r\n> use id-ML-DSA-44, id-ML-DSA-65, id-ML-DSA-87 respectively as\r\n> defined in {{I-D.ietf-lamps-dilithium-certificates}}.",
+              "createdAt": "2025-05-16T12:08:39Z",
+              "updatedAt": "2025-05-16T12:08:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONEpyw86pqUKa",
+          "commit": {
+            "abbreviatedOid": "82acd82"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-16T12:10:58Z",
+          "updatedAt": "2025-05-16T12:10:59Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "<s>What's your reasoning for adding this paragraph? I don't think it's technically required as it's already specified. If it's meant as context it might be better to move earlier in the section.</s> Ah, I think I understand what you're getting at. Let me give it a jab.",
+              "createdAt": "2025-05-16T12:10:59Z",
+              "updatedAt": "2025-05-16T12:21:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONEpyw86pqyh9",
+          "commit": {
+            "abbreviatedOid": "82acd82"
+          },
+          "author": "tomato42",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-16T13:01:42Z",
+          "updatedAt": "2025-05-16T13:01:42Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "yes, that does sound better",
+              "createdAt": "2025-05-16T13:01:42Z",
+              "updatedAt": "2025-05-16T13:01:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONEpyw86prt37",
+          "commit": {
+            "abbreviatedOid": "82acd82"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-16T14:26:17Z",
+          "updatedAt": "2025-05-16T14:26:18Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "https://github.com/tlswg/tls-mldsa/pull/12",
+              "createdAt": "2025-05-16T14:26:17Z",
+              "updatedAt": "2025-05-16T14:26:18Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDONEpyw86We4p1",
+      "title": "Add table and rewrite for clarity",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/12",
+      "state": "OPEN",
+      "author": "bwesterb",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-05-16T14:25:37Z",
+      "updatedAt": "2025-05-16T20:08:41Z",
+      "baseRepository": "tlswg/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "96a1d8c6c451f81cc84ec59f432b474506dfef55",
+      "headRepository": "tlswg/tls-mldsa",
+      "headRefName": "bas/rewrite",
+      "headRefOid": "644aa986cc927907b5ce9c84f8c9c113df33a661",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "body": "cc @tomato42 ",
+          "createdAt": "2025-05-16T14:27:28Z",
+          "updatedAt": "2025-05-16T14:27:28Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONEpyw86puHhG",
+          "commit": {
+            "abbreviatedOid": "644aa98"
+          },
+          "author": "tomato42",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "LGTM",
+          "createdAt": "2025-05-16T19:12:19Z",
+          "updatedAt": "2025-05-16T19:12:19Z",
           "comments": []
         }
       ]
