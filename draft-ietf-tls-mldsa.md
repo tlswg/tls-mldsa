@@ -32,6 +32,7 @@ author:
     organization: Google
     email: sschmieg@google.com
  -
+    ins: B.E. Westerbaan
     fullname: "Bas Westerbaan"
     organization: Cloudflare
     email: bas@cloudflare.com
@@ -115,11 +116,11 @@ TODO Security
 This document requests new entries to the TLS SignatureScheme registry,
 according to the procedures in {{Section 6 of TLSIANA}}.
 
-| Value           | Description | Recommended | Reference      |
-|-----------------|-------------|-------------|----------------|
-| 0x0904 (please) | mldsa44     | N           | This document. |
-| 0x0905 (please) | mldsa65     | N           | This document. |
-| 0x0906 (please) | mldsa87     | N           | This document. |
+| Value   | Description | Recommended | Reference      |
+|---------|-------------|-------------|----------------|
+| 0x0904  | mldsa44     | N           | This document. |
+| 0x0905  | mldsa65     | N           | This document. |
+| 0x0906  | mldsa87     | N           | This document. |
 
 --- back
 
