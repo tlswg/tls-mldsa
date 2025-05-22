@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-20T01:02:25.147626+00:00",
+  "timestamp": "2025-05-22T01:01:48.698612+00:00",
   "repo": "tlswg/tls-mldsa",
   "labels": [
     {
@@ -375,7 +375,7 @@
       "labels": [],
       "body": "Add initial security consideration text.",
       "createdAt": "2025-05-16T10:28:23Z",
-      "updatedAt": "2025-05-16T14:44:56Z",
+      "updatedAt": "2025-05-20T07:51:09Z",
       "baseRepository": "tlswg/tls-mldsa",
       "baseRefName": "main",
       "baseRefOid": "48931e8f6092d15a343f2ef85aa2e09d4045b573",
@@ -405,6 +405,46 @@
               "body": "These remarks are not specific to ML-DSA. It'd be better to find a reference.",
               "createdAt": "2025-05-16T14:44:55Z",
               "updatedAt": "2025-05-16T14:44:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONEpyw86qDleI",
+          "commit": {
+            "abbreviatedOid": "2137264"
+          },
+          "author": "nikgame33",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-20T07:46:34Z",
+          "updatedAt": "2025-05-20T07:46:34Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I would explicitly mention Section 3.6 of FIPS 204 as it afaik does mention most of the security issues when thinking about implementation.",
+              "createdAt": "2025-05-20T07:46:34Z",
+              "updatedAt": "2025-05-20T07:46:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONEpyw86qDo5F",
+          "commit": {
+            "abbreviatedOid": "2137264"
+          },
+          "author": "loganaden",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-20T07:51:08Z",
+          "updatedAt": "2025-05-20T07:51:09Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "got it @nikgame33 ",
+              "createdAt": "2025-05-20T07:51:09Z",
+              "updatedAt": "2025-05-20T07:51:09Z"
             }
           ]
         }
