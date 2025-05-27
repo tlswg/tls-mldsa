@@ -57,7 +57,7 @@ is used for authentication in TLS 1.3.
 
 # Introduction
 
-ML-DSA is a post-quantum module-lattice based digital signature algorothm
+ML-DSA is a post-quantum module-lattice-based digital signature algorithm
 standardised by NIST in {{!FIPS204=DOI.10.6028/NIST.FIPS.204}}.
 
 This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
@@ -101,7 +101,8 @@ The context parameter defined in {{FIPS204}} Algorithm 2 and 3
 MUST be the empty string.
 
 ## TLS 1.2
-The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}.
+The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}
+or earlier versions.
 A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
 1.2 connection with schemes defined in this document MUST abort the connection
 with an illegal_parameter alert.
@@ -128,5 +129,5 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 {:numbered="false"}
 
 Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander Bokovoy,
-    and Niklas Block
+    Niklas Block, and Ryan Appel
     for their review and feedback.
