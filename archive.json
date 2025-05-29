@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-22T01:01:48.698612+00:00",
+  "timestamp": "2025-05-29T01:02:19.165128+00:00",
   "repo": "tlswg/tls-mldsa",
   "labels": [
     {
@@ -642,6 +642,93 @@
           "createdAt": "2025-05-16T19:12:19Z",
           "updatedAt": "2025-05-16T19:12:19Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDONEpyw86XxWHL",
+      "title": "Suggestions Ryan Appel",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/13",
+      "state": "OPEN",
+      "author": "bwesterb",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-05-27T12:12:22Z",
+      "updatedAt": "2025-05-27T14:58:36Z",
+      "baseRepository": "tlswg/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "1b181743be5288e263ef8245572c2db5dac06d22",
+      "headRepository": "tlswg/tls-mldsa",
+      "headRefName": "bas/appel",
+      "headRefOid": "0d53abb2f0cf9361787f8ac2a3e5ba4720bad31b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONEpyw86rHcBm",
+          "commit": {
+            "abbreviatedOid": "0d53abb"
+          },
+          "author": "tomato42",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-27T12:23:46Z",
+          "updatedAt": "2025-05-27T12:23:46Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "_technically_ speaking, there is no way to use signature_algorithms in TLS 1.1 or earlier, so it's not possible to use those schemes and still have a standard-following implementation...\r\n\r\nalso, TLS 1.1 is deprecated: [RFC8996](https://www.rfc-editor.org/rfc/rfc8996.html)\r\n\r\n(not saying it's wrong to have this, but I don't think omitting it is wrong either)",
+              "createdAt": "2025-05-27T12:23:46Z",
+              "updatedAt": "2025-05-27T12:24:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONEpyw86rHnnL",
+          "commit": {
+            "abbreviatedOid": "0d53abb"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-27T12:37:01Z",
+          "updatedAt": "2025-05-27T12:37:01Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "Agreed\u2014`SignatureScheme` is a TLS 1.3 type anyway, right? So TLS 1.2 is perhaps also superfluous.",
+              "createdAt": "2025-05-27T12:37:01Z",
+              "updatedAt": "2025-05-27T12:37:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONEpyw86rJutX",
+          "commit": {
+            "abbreviatedOid": "0d53abb"
+          },
+          "author": "tomato42",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-27T14:58:36Z",
+          "updatedAt": "2025-05-27T14:58:36Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "not really, the TLS 1.3 specification allows use of the RSA-PSS signatures in TLS 1.2, and they are defined as SignatureScheme's only",
+              "createdAt": "2025-05-27T14:58:36Z",
+              "updatedAt": "2025-05-27T14:58:36Z"
+            }
+          ]
         }
       ]
     }
