@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-29T01:02:19.165128+00:00",
+  "timestamp": "2025-06-17T01:03:19.762477+00:00",
   "repo": "tlswg/tls-mldsa",
   "labels": [
     {
@@ -78,6 +78,37 @@
           "body": ":-1: from me for using non-empty context string\r\n\r\nI don't think it's necessary, the \"message\" signed already makes it plainly obvious that we're signing TLS 1.3 handshake hash, and the libraries will need to support context string for the hybrid schemes, so requiring its use for TLS won't change much and may just delay deployability of this draft",
           "createdAt": "2024-11-14T13:13:37Z",
           "updatedAt": "2024-11-14T13:13:37Z"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "I_kwDONEpyw867vN-p",
+      "title": "Test vectors",
+      "url": "https://github.com/tlswg/tls-mldsa/issues/14",
+      "state": "CLOSED",
+      "author": "djc",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "In https://github.com/rustls/webpki/pull/348, I'm drafting support for ML-DSA in rustls (and its webpki component for certificate verification). Are any implementers testing this yet? Is it intended to have some basic test vectors in the specification?\n\nI looked at https://pq.cloudflareresearch.com/ but it doesn't seem to reference ML-DSA at least on the site.",
+      "createdAt": "2025-06-16T11:52:35Z",
+      "updatedAt": "2025-06-16T13:08:15Z",
+      "closedAt": "2025-06-16T13:08:15Z",
+      "comments": [
+        {
+          "author": "bwesterb",
+          "authorAssociation": "COLLABORATOR",
+          "body": "LAMPS' [ML-DSA draft](https://datatracker.ietf.org/doc/draft-ietf-lamps-dilithium-certificates/) has test vectors. Cloudflare doesn't have any ML-DSA (hybrids) deployed yet. OpenSSL seems to have support for this draft.",
+          "createdAt": "2025-06-16T11:59:37Z",
+          "updatedAt": "2025-06-16T11:59:37Z"
+        },
+        {
+          "author": "djc",
+          "authorAssociation": "NONE",
+          "body": "Thanks!",
+          "createdAt": "2025-06-16T13:08:14Z",
+          "updatedAt": "2025-06-16T13:08:14Z"
         }
       ]
     }
