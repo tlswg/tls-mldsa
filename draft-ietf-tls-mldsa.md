@@ -122,6 +122,13 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 | 0x0905  | mldsa65     | N           | This document. |
 | 0x0906  | mldsa87     | N           | This document. |
 
+This document requests a new entry to the TLS SignatureAlgorithm registry,
+according to the procedures in {{Section 10 of TLSIANA}}.
+
+| Value   | Description | Recommended | Reference      |
+|---------|-------------|-------------|----------------|
+| 0x09    | mldsa       | N           | This document. |
+
 --- back
 
 # Acknowledgments
