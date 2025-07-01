@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-17T01:03:19.762477+00:00",
+  "timestamp": "2025-07-01T01:11:08.058003+00:00",
   "repo": "tlswg/tls-mldsa",
   "labels": [
     {
@@ -762,6 +762,40 @@
           ]
         }
       ]
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDONEpyw86crlBx",
+      "title": "Add a TLS signature algorithm request",
+      "url": "https://github.com/tlswg/tls-mldsa/pull/15",
+      "state": "CLOSED",
+      "author": "djc",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "I think we'll need this in addition to the SignatureScheme values? Not sure if this is the right place.",
+      "createdAt": "2025-06-30T11:45:45Z",
+      "updatedAt": "2025-06-30T13:13:05Z",
+      "baseRepository": "tlswg/tls-mldsa",
+      "baseRefName": "main",
+      "baseRefOid": "1b181743be5288e263ef8245572c2db5dac06d22",
+      "headRepository": "djc/tls-mldsa",
+      "headRefName": "patch-1",
+      "headRefOid": "f26e34e67c9830eeacb4291c82e16c1d7ac685c6",
+      "closedAt": "2025-06-30T13:13:05Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "tomato42",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "no, we don't, those codepoints are uninterpretable according to TLS 1.2 semantics",
+          "createdAt": "2025-06-30T12:38:06Z",
+          "updatedAt": "2025-06-30T12:38:06Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
