@@ -108,9 +108,12 @@ A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
 with an illegal_parameter alert.
 
 # Security Considerations
+The security considerations in ML-DSA {{FIPS204}} apply to all uses of ML-DSA,
+including those in TLS.
 
-TODO Security
-
+Cryptographic algorithms and parameters are usually broken or weakened over time.
+Implementers and users need to continously re-evaluate that cryptographic
+algorithms continue to provide the expected level of security.
 
 # IANA Considerations
 
