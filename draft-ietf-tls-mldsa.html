@@ -12,23 +12,23 @@
        This memo specifies how the post-quantum signature scheme ML-DSA (FIPS 204)
 is used for authentication in TLS 1.3. 
     " name="description">
-<meta content="xml2rfc 3.28.1" name="generator">
+<meta content="xml2rfc 3.30.2" name="generator">
 <meta content="ML-DSA" name="keyword">
 <meta content="FIPS204" name="keyword">
 <meta content="draft-ietf-tls-mldsa-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.1
-    Python 3.12.10
+  xml2rfc 3.30.2
+    Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
-    lxml 5.3.0
-    platformdirs 4.3.8
+    lxml 5.3.1
+    platformdirs 4.4.0
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.3
-    setuptools 70.3.0
+    requests 2.32.5
+    setuptools 80.9.0
     wcwidth 0.2.13
 -->
 <link href="draft-ietf-tls-mldsa.xml" rel="alternate" type="application/rfc+xml">
@@ -1048,11 +1048,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Use of ML-DSA in TLS 1.3</td>
-<td class="right">May 2025</td>
+<td class="right">September 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Hollebeek, et al.</td>
-<td class="center">Expires 20 November 2025</td>
+<td class="center">Expires 29 March 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1065,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-tls-mldsa-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-05-19" class="published">19 May 2025</time>
+<time datetime="2025-09-25" class="published">25 September 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-11-20">20 November 2025</time></dd>
+<dd class="expires"><time datetime="2026-03-29">29 March 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1129,7 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 29 March 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1210,7 +1210,7 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">ML-DSA is a post-quantum module-lattice based digital signature algorothm
+<p id="section-1-1">ML-DSA is a post-quantum module-lattice-based digital signature algorithm
 standardised by NIST in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
 via the <code>signature_algorithms</code> and <code>signature_algorithms_cert</code> extensions.<a href="#section-1-2" class="pilcrow">¶</a></p>
@@ -1300,7 +1300,8 @@ certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdent
         <h3 id="name-tls-12">
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-tls-12" class="section-name selfRef">TLS 1.2</a>
         </h3>
-<p id="section-3.3-1">The schemes defined in this document <span class="bcp14">MUST NOT</span> be used in TLS 1.2 <span>[<a href="#RFC5246" class="cite xref">RFC5246</a>]</span>.
+<p id="section-3.3-1">The schemes defined in this document <span class="bcp14">MUST NOT</span> be used in TLS 1.2 <span>[<a href="#RFC5246" class="cite xref">RFC5246</a>]</span>
+or earlier versions.
 A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
 1.2 connection with schemes defined in this document <span class="bcp14">MUST</span> abort the connection
 with an illegal_parameter alert.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
@@ -1322,7 +1323,7 @@ with an illegal_parameter alert.<a href="#section-3.3-1" class="pilcrow">¶</a><
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
 <p id="section-5-1">This document requests new entries to the TLS SignatureScheme registry,
-according to the procedures in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-12#section-6" class="relref">Section 6</a> of [<a href="#TLSIANA" class="cite xref">TLSIANA</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
+according to the procedures in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-15#section-6" class="relref">Section 6</a> of [<a href="#TLSIANA" class="cite xref">TLSIANA</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <table class="center" id="table-2">
         <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
 <thead>
@@ -1390,7 +1391,7 @@ according to the procedures in <span><a href="https://datatracker.ietf.org/doc/h
 <dl class="references">
 <dt id="MLDSACERTS">[MLDSACERTS]</dt>
         <dd>
-<span class="refAuthor">Massimo, J.</span>, <span class="refAuthor">Kampanakis, P.</span>, <span class="refAuthor">Turner, S.</span>, and <span class="refAuthor">B. Westerbaan</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure - Algorithm Identifiers for the Module-Lattice-Based Digital Signature Algorithm (ML-DSA)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-dilithium-certificates-09</span>, <time datetime="2025-05-07" class="refDate">7 May 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-09">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-09</a>&gt;</span>. </dd>
+<span class="refAuthor">Massimo, J.</span>, <span class="refAuthor">Kampanakis, P.</span>, <span class="refAuthor">Turner, S.</span>, and <span class="refAuthor">B. Westerbaan</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure - Algorithm Identifiers for the Module-Lattice-Based Digital Signature Algorithm (ML-DSA)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-lamps-dilithium-certificates-12</span>, <time datetime="2025-06-26" class="refDate">26 June 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-12">https://datatracker.ietf.org/doc/html/draft-ietf-lamps-dilithium-certificates-12</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC5246">[RFC5246]</dt>
         <dd>
@@ -1402,7 +1403,7 @@ according to the procedures in <span><a href="https://datatracker.ietf.org/doc/h
 <dd class="break"></dd>
 <dt id="TLSIANA">[TLSIANA]</dt>
       <dd>
-<span class="refAuthor">Salowey, J. A.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"IANA Registry Updates for TLS and DTLS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-tls-rfc8447bis-12</span>, <time datetime="2025-04-11" class="refDate">11 April 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-12">https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-12</a>&gt;</span>. </dd>
+<span class="refAuthor">Salowey, J. A.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"IANA Registry Updates for TLS and DTLS"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-tls-rfc8447bis-15</span>, <time datetime="2025-07-21" class="refDate">21 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-15">https://datatracker.ietf.org/doc/html/draft-ietf-tls-rfc8447bis-15</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1415,7 +1416,7 @@ according to the procedures in <span><a href="https://datatracker.ietf.org/doc/h
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
 <p id="appendix-A-1">Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander Bokovoy,
-    and Niklas Block
+    Niklas Block, and Ryan Appel
     for their review and feedback.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
 </div>
