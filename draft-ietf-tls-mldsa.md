@@ -38,10 +38,10 @@ author:
     email: bas@cloudflare.com
 
 normative:
+ RFC8446:
 
 informative:
  RFC5246:
- RFC8446:
  TLSIANA: I-D.ietf-tls-rfc8447bis
  MLDSACERTS: I-D.ietf-lamps-dilithium-certificates
 
@@ -109,7 +109,8 @@ with an illegal_parameter alert.
 
 # Security Considerations
 
-TODO Security
+The security considerations of {{RFC8446}} (eg. appendix C.2)
+and {{FIPS204}} (Section 3.6) apply.
 
 
 # IANA Considerations
@@ -129,5 +130,5 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 {:numbered="false"}
 
 Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander Bokovoy,
-    Niklas Block, and Ryan Appel
+    Niklas Block, Ryan Appel, and Loganaden Velvindron
     for their review and feedback.
