@@ -75,11 +75,11 @@ the negotiation of signature scheme for authentication via the
 This document adds three new SignatureScheme values for the three
 ML-DSA parameter sets from {{FIPS204}} as follows.
 
-| SignatureScheme | FIPS 204  | Certificate AlgorithmIdentifier |
-|-----------------|-----------|---------------------------------|
-| mldsa44(0x0904) | ML-DSA-44 | id-ML-DSA-44                    |
-| mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-64                    |
-| mldsa87(0x0906) | ML-DSA-87 | id-ML-DSA-87                    |
+| SignatureScheme | FIPS 204  | Certificate AlgorithmIdentifier        |
+|-----------------|-----------|----------------------------------------|
+| mldsa44(0x0904) | ML-DSA-44 | id-ML-DSA-44 (2.16.840.1.101.3.4.3.17) |
+| mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-64 (2.16.840.1.101.3.4.3.18) |
+| mldsa87(0x0906) | ML-DSA-87 | id-ML-DSA-87 (2.16.840.1.101.3.4.3.19) |
 {: #schemes title="SignatureSchemes for ML-DSA" }
 
 Note that these are different from the HashML-DSA pre-hashed
