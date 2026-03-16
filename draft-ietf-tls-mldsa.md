@@ -110,7 +110,7 @@ with an illegal_parameter alert.
 # Security Considerations
 
 The security considerations of {{RFC8446}} (eg. appendix C.2)
-and {{FIPS204}} (Section 3.6) apply.
+and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
 
 # IANA Considerations
