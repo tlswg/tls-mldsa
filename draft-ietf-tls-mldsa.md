@@ -87,7 +87,7 @@ variants defined in Section 5.4 of {{FIPS204}}.
 
 ## Certificate chain
 For the purpose of signalling support for signatures on certificates
-as per {{Section 4.2.4 of RFC8446}}, these values indicate support
+as per {{Section 4.2.3 of RFC8446}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
 as defined in {{MLDSACERTS}}.
 
@@ -97,20 +97,25 @@ then the signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier from {{schemes}}.
 
+If the signature or public key is of the wrong length, the client MUST
+treat this a verification failure, and thus terminate the handshake
+with `decrypt_error` alert.
+
 The context parameter defined in {{FIPS204}} Algorithm 2 and 3
-MUST be the empty string.
+MUST be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of {{Section 4.4.3 of RFC8446}}.
 
 ## TLS 1.2
 The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}
 or earlier versions.
 A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
 1.2 connection with schemes defined in this document MUST abort the connection
-with an illegal_parameter alert.
+with an `illegal_parameter` alert.
 
 # Security Considerations
 
-The security considerations of {{RFC8446}} (eg. appendix C.2)
-and {{FIPS204}} (Section 3.6) apply.
+The security considerations of {{RFC8446}} (eg. appendices C.2, E.1
+and Section 4.4.3) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
 
 # IANA Considerations
@@ -130,5 +135,5 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 {:numbered="false"}
 
 Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander Bokovoy,
-    Niklas Block, Ryan Appel, and Loganaden Velvindron
+    Niklas Block, Ryan Appel, Loganaden Velvindron, and Nick Sullivan
     for their review and feedback.
