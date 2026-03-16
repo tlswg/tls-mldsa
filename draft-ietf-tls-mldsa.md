@@ -87,7 +87,7 @@ variants defined in Section 5.4 of {{FIPS204}}.
 
 ## Certificate chain
 For the purpose of signalling support for signatures on certificates
-as per {{Section 4.2.4 of RFC8446}}, these values indicate support
+as per {{Section 4.2.3 of RFC8446}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
 as defined in {{MLDSACERTS}}.
 
