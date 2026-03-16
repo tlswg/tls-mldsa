@@ -130,5 +130,5 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 {:numbered="false"}
 
 Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander Bokovoy,
-    Niklas Block, Ryan Appel, and Loganaden Velvindron
+    Niklas Block, Ryan Appel, Loganaden Velvindron, and Nick Sullivan
     for their review and feedback.
