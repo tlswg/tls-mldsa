@@ -114,8 +114,8 @@ with an `illegal_parameter` alert.
 
 # Security Considerations
 
-The security considerations of {{RFC8446}} (eg. appendix C.2)
-and {{FIPS204}} (Section 3.4 and 3.6) apply.
+The security considerations of {{RFC8446}} (eg. appendices C.2, E.1
+and Section 4.4.3) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
 
 # IANA Considerations
