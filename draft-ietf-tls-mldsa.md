@@ -102,7 +102,8 @@ treat this a verification failure, and thus terminate the handshake
 with `decrypt_error` alert.
 
 The context parameter defined in {{FIPS204}} Algorithm 2 and 3
-MUST be the empty string.
+MUST be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of {{Section 4.4.3 of RFC8446}}.
 
 ## TLS 1.2
 The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}
