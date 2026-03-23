@@ -43,7 +43,7 @@ normative:
 informative:
  RFC5246:
  TLSIANA: I-D.ietf-tls-rfc8447bis
- MLDSACERTS: I-D.ietf-lamps-dilithium-certificates
+ MLDSACERTS: RFC9881
 
 
 
