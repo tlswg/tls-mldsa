@@ -42,7 +42,7 @@ normative:
 
 informative:
  RFC5246:
- TLSIANA: I-D.ietf-tls-rfc8447bis
+ TLSIANA: RFC9847
  MLDSACERTS: RFC9881
 
 
