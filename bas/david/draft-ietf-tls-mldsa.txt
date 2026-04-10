@@ -141,9 +141,9 @@ Table of Contents
    corresponding end-entity certificate MUST use the corresponding
    AlgorithmIdentifier from Table 1.
 
-   If the signature is of the wrong length, the client MUST treat this a
-   verification failure, and thus terminate the handshake with
-   decrypt_error alert.
+   If the signature is of the wrong length, the verifying peer MUST
+   treat this a verification failure, and thus terminate the handshake
+   with decrypt_error alert.
 
    The context parameter defined in [FIPS204] Algorithm 2 and 3 MUST be
    the empty string.  Note that the context parameter of FIPS 204 is
@@ -224,7 +224,8 @@ Acknowledgments
 
    Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander
    Bokovoy, Niklas Block, Ryan Appel, Loganaden Velvindron, David
-   Benjamin, and Nick Sullivan for their review and feedback.
+   Benjamin, Viktor Dukhovni, and Nick Sullivan for their review and
+   feedback.
 
 Authors' Addresses
 
