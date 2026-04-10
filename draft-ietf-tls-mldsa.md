@@ -96,7 +96,7 @@ When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier
-in its SubjectPublicKeyInfo from {{schemes}}.
+from {{schemes}} in its SubjectPublicKeyInfo.
 
 If the signature or public key is of the wrong length, the client MUST
 treat this a verification failure, and thus terminate the handshake
