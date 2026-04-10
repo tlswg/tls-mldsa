@@ -38,7 +38,7 @@ author:
     email: bas@cloudflare.com
 
 normative:
- RFC8446:
+ RFC9846:
  RFC9881:
 
 informative:
@@ -71,13 +71,7 @@ via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 
 # ML-DSA SignatureScheme Values
 
-{:aside}
-> Note to RFC editor: References to RFC 8446 are to be updated
-> to reference RFC 9846 (RFC 8446bis) once it is published.
-> Section references need to be updated accordingly.
-> PR: <https://github.com/tlswg/tls-mldsa/pull/25>
-
-As defined in {{RFC8446}}, the SignatureScheme namespace is used for
+As defined in {{RFC9846}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
 This document maps three new SignatureScheme values for the three
@@ -98,18 +92,18 @@ because of the reasons laid out in {{Section 8.3 of RFC9881}}.
 
 ## Certificate Chain
 For the purpose of signalling support for signatures on certificates
-as per {{Section 4.2.3 of RFC8446}}, these values indicate support
+as per {{Section 4.3.3 of RFC9846}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
 as defined in {{RFC9881}}.
 
 ## Handshake Signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
-{{Section 4.4.3 of RFC8446}}, using
+{{Section 4.5.2 of RFC9846}}, using
 Algorithm 2 (ML-DSA.Sign) and Algorithm 3 (ML-DSA.Verify)
 of {{FIPS204}} respectively. The context (ctx) parameter
 MUST be the empty string. Note that the context parameter of FIPS 204
-is different from the context string of {{Section 4.4.3 of RFC8446}}.
+is different from the context string of {{Section 4.5.2 of RFC9846}}.
 
 The corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier
@@ -117,8 +111,8 @@ from {{schemes}} in its SubjectPublicKeyInfo.
 
 # Security Considerations
 
-The security considerations described in {{Appendices C.2 and E.1 of RFC8446}}
-and {{Section 4.4.3 of RFC8446}} apply. In particular, signature-based modes of
+The security considerations described in {{Appendices C.2 and F.1 of RFC9846}}
+and {{Section 4.5.2 of RFC9846}} apply. In particular, signature-based modes of
 TLS depend on the signature scheme being secure against chosen message
 attacks {{?SIGMA=DOI.10.1007/978-3-540-45146-4_24}}. Per Section 3.1 of
 {{FIPS204}}, ML-DSA is designed to meet this property.
@@ -168,5 +162,6 @@ Thanks to
     Daniel Van Geest,
     Martin Thomson,
     Wang Guilin,
+    Muhammad Usama Sardar,
     and Nick Sullivan
     for their review and feedback.
