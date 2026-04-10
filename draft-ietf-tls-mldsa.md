@@ -38,7 +38,7 @@ author:
     email: bas@cloudflare.com
 
 normative:
- RFC8446:
+ RFC9846:
 
 informative:
  RFC5246:
@@ -69,7 +69,7 @@ via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 
 # ML-DSA SignatureScheme values
 
-As defined in {{RFC8446}}, the SignatureScheme namespace is used for
+As defined in {{RFC9846}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
 This document adds three new SignatureScheme values for the three
@@ -87,14 +87,14 @@ variants defined in Section 5.4 of {{FIPS204}}.
 
 ## Certificate chain
 For the purpose of signalling support for signatures on certificates
-as per {{Section 4.2.3 of RFC8446}}, these values indicate support
+as per {{Section 4.2.3 of RFC9846}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
 as defined in {{MLDSACERTS}}.
 
 ## Handshake signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
-{{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
+{{Section 4.4.3 of RFC9846}}, and the corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier from {{schemes}}.
 
 If the signature or public key is of the wrong length, the client MUST
@@ -103,7 +103,7 @@ with `decrypt_error` alert.
 
 The context parameter defined in {{FIPS204}} Algorithm 2 and 3
 MUST be the empty string. Note that the context parameter of FIPS 204
-is different from the context string of {{Section 4.4.3 of RFC8446}}.
+is different from the context string of {{Section 4.4.3 of RFC9846}}.
 
 ## TLS 1.2
 The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}
@@ -114,7 +114,7 @@ with an `illegal_parameter` alert.
 
 # Security Considerations
 
-The security considerations of {{RFC8446}} (eg. appendices C.2, E.1
+The security considerations of {{RFC9846}} (eg. appendices C.2, F.1
 and Section 4.4.3) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
 
@@ -142,5 +142,6 @@ Thanks to
     Niklas Block,
     Ryan Appel,
     Loganaden Velvindron,
+    Muhammad Usama Sardar,
     and Nick Sullivan
     for their review and feedback.
