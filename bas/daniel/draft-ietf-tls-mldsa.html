@@ -1292,7 +1292,7 @@ as defined in <span>[<a href="#MLDSACERTS" class="cite xref">MLDSACERTS</a>]</sp
 then the signature <span class="bcp14">MUST</span> be computed and verified as specified in
 <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, and the corresponding end-entity
 certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier
-in its SubjectPublicKeyInfo from <a href="#schemes" class="auto internal xref">Table 1</a>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+from <a href="#schemes" class="auto internal xref">Table 1</a> in its SubjectPublicKeyInfo.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <p id="section-3.2-2">If the signature or public key is of the wrong length, the client <span class="bcp14">MUST</span>
 treat this a verification failure, and thus terminate the handshake
 with <code>decrypt_error</code> alert.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
