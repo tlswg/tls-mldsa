@@ -97,10 +97,6 @@ then the signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier from {{schemes}}.
 
-If the signature is of the wrong length, the verifying peer MUST
-treat this a verification failure, and thus terminate the handshake
-with `decrypt_error` alert.
-
 The context parameter defined in {{FIPS204}} Algorithm 2 and 3
 MUST be the empty string. Note that the context parameter of FIPS 204
 is different from the context string of {{Section 4.4.3 of RFC8446}}.
