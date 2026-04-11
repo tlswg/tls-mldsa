@@ -10,7 +10,7 @@ date:
 consensus: true
 v: 3
 area: Security
-workgroup: Transport Layer Security§
+workgroup: Transport Layer Security
 keyword:
  - ML-DSA
  - FIPS204
@@ -78,7 +78,7 @@ ML-DSA parameter sets from {{FIPS204}} as follows.
 | SignatureScheme | FIPS 204  | Certificate SPKI AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
 | mldsa44(0x0904) | ML-DSA-44 | id-ML-DSA-44 (2.16.840.1.101.3.4.3.17) |
-| mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-64 (2.16.840.1.101.3.4.3.18) |
+| mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-65 (2.16.840.1.101.3.4.3.18) |
 | mldsa87(0x0906) | ML-DSA-87 | id-ML-DSA-87 (2.16.840.1.101.3.4.3.19) |
 {: #schemes title="SignatureSchemes for ML-DSA" }
 
@@ -99,7 +99,7 @@ certificate MUST use the corresponding AlgorithmIdentifier
 from {{schemes}} in its SubjectPublicKeyInfo.
 
 If the signature or public key is of the wrong length, the client MUST
-treat this a verification failure, and thus terminate the handshake
+treat this as a verification failure, and thus terminate the handshake
 with `decrypt_error` alert.
 
 The context parameter defined in {{FIPS204}} Algorithm 2 and 3
@@ -143,6 +143,7 @@ Thanks to
     Niklas Block,
     Ryan Appel,
     Loganaden Velvindron,
+    Rob Sayre,
     Daniel Van Geest,
     and Nick Sullivan
     for their review and feedback.
