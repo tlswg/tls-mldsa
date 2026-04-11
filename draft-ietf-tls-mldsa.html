@@ -1061,7 +1061,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">Transport Layer Security§</dd>
+<dd class="workgroup">Transport Layer Security</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
 <dd class="internet-draft">draft-ietf-tls-mldsa-latest</dd>
 <dt class="label-published">Published:</dt>
@@ -1260,7 +1260,7 @@ ML-DSA parameter sets from <span>[<a href="#FIPS204" class="cite xref">FIPS204</
           <tr>
             <td class="text-left" rowspan="1" colspan="1">mldsa65(0x0905)</td>
             <td class="text-left" rowspan="1" colspan="1">ML-DSA-65</td>
-            <td class="text-left" rowspan="1" colspan="1">id-ML-DSA-64 (2.16.840.1.101.3.4.3.18)</td>
+            <td class="text-left" rowspan="1" colspan="1">id-ML-DSA-65 (2.16.840.1.101.3.4.3.18)</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">mldsa87(0x0906)</td>
@@ -1294,7 +1294,7 @@ then the signature <span class="bcp14">MUST</span> be computed and verified as s
 certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier
 from <a href="#schemes" class="auto internal xref">Table 1</a> in its SubjectPublicKeyInfo.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <p id="section-3.2-2">If the signature or public key is of the wrong length, the client <span class="bcp14">MUST</span>
-treat this a verification failure, and thus terminate the handshake
+treat this as a verification failure, and thus terminate the handshake
 with <code>decrypt_error</code> alert.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
 <p id="section-3.2-3">The context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2 and 3
 <span class="bcp14">MUST</span> be the empty string. Note that the context parameter of FIPS 204
@@ -1430,6 +1430,7 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
     Niklas Block,
     Ryan Appel,
     Loganaden Velvindron,
+    Rob Sayre,
     Daniel Van Geest,
     and Nick Sullivan
     for their review and feedback.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
