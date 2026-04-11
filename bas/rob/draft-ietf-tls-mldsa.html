@@ -1248,7 +1248,7 @@ ML-DSA parameter sets from <span>[<a href="#FIPS204" class="cite xref">FIPS204</
           <tr>
             <th class="text-left" rowspan="1" colspan="1">SignatureScheme</th>
             <th class="text-left" rowspan="1" colspan="1">FIPS 204</th>
-            <th class="text-left" rowspan="1" colspan="1">Certificate AlgorithmIdentifier</th>
+            <th class="text-left" rowspan="1" colspan="1">Certificate SPKI AlgorithmIdentifier</th>
           </tr>
         </thead>
         <tbody>
@@ -1291,7 +1291,8 @@ as defined in <span>[<a href="#MLDSACERTS" class="cite xref">MLDSACERTS</a>]</sp
 <p id="section-3.2-1">When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature <span class="bcp14">MUST</span> be computed and verified as specified in
 <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, and the corresponding end-entity
-certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier from <a href="#schemes" class="auto internal xref">Table 1</a>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier
+from <a href="#schemes" class="auto internal xref">Table 1</a> in its SubjectPublicKeyInfo.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <p id="section-3.2-2">If the signature or public key is of the wrong length, the client <span class="bcp14">MUST</span>
 treat this as a verification failure, and thus terminate the handshake
 with <code>decrypt_error</code> alert.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
@@ -1430,6 +1431,7 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
     Ryan Appel,
     Loganaden Velvindron,
     Rob Sayre,
+    Daniel Van Geest,
     and Nick Sullivan
     for their review and feedback.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
