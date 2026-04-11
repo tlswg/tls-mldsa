@@ -67,7 +67,7 @@ via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 
 {::boilerplate bcp14-tagged}
 
-# ML-DSA SignatureScheme values
+# ML-DSA SignatureScheme Values
 
 As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
@@ -85,13 +85,13 @@ ML-DSA parameter sets from {{FIPS204}} as follows.
 Note that these are different from the HashML-DSA pre-hashed
 variants defined in Section 5.4 of {{FIPS204}}.
 
-## Certificate chain
+## Certificate Chain
 For the purpose of signalling support for signatures on certificates
 as per {{Section 4.2.3 of RFC8446}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
 as defined in {{MLDSACERTS}}.
 
-## Handshake signature
+## Handshake Signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
