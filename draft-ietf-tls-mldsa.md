@@ -75,7 +75,7 @@ the negotiation of signature scheme for authentication via the
 This document adds three new SignatureScheme values for the three
 ML-DSA parameter sets from {{FIPS204}} as follows.
 
-| SignatureScheme | FIPS 204  | Certificate AlgorithmIdentifier        |
+| SignatureScheme | FIPS 204  | Certificate SPKI AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
 | mldsa44(0x0904) | ML-DSA-44 | id-ML-DSA-44 (2.16.840.1.101.3.4.3.17) |
 | mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-64 (2.16.840.1.101.3.4.3.18) |
@@ -95,7 +95,8 @@ as defined in {{MLDSACERTS}}.
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
-certificate MUST use the corresponding AlgorithmIdentifier from {{schemes}}.
+certificate MUST use the corresponding AlgorithmIdentifier
+from {{schemes}} in its SubjectPublicKeyInfo.
 
 If the signature or public key is of the wrong length, the client MUST
 treat this a verification failure, and thus terminate the handshake
@@ -142,5 +143,6 @@ Thanks to
     Niklas Block,
     Ryan Appel,
     Loganaden Velvindron,
+    Daniel Van Geest,
     and Nick Sullivan
     for their review and feedback.
