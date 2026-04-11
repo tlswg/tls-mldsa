@@ -94,17 +94,19 @@ as defined in {{MLDSACERTS}}.
 ## Handshake Signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
-{{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
+{{Section 4.4.3 of RFC8446}}, using
+Algorithm 2 (ML-DSA.Sign) and Algorithm 3 (ML-DSA.Verify)
+of {{FIPS204}} respectively. The context (ctx) parameter
+MUST be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of {{Section 4.4.3 of RFC8446}}.
+
+The corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier
 from {{schemes}} in its SubjectPublicKeyInfo.
 
 If the signature or public key is of the wrong length, the client MUST
 treat this as a verification failure, and thus terminate the handshake
 with `decrypt_error` alert.
-
-The context parameter defined in {{FIPS204}} Algorithm 2 and 3
-MUST be the empty string. Note that the context parameter of FIPS 204
-is different from the context string of {{Section 4.4.3 of RFC8446}}.
 
 ## TLS 1.2
 The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}
