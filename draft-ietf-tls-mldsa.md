@@ -73,7 +73,7 @@ As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
 This document adds three new SignatureScheme values for the three
-ML-DSA parameter sets from {{FIPS204}} as follows.
+ML-DSA parameter sets listed in Section 4, Table 1 of {{FIPS204}} as follows.
 
 | SignatureScheme | FIPS 204  | Certificate SPKI AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
