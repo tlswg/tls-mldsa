@@ -134,7 +134,14 @@ according to the procedures in {{Section 6 of TLSIANA}}.
 # Acknowledgments
 {:numbered="false"}
 
-Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander Bokovoy,
-    Niklas Block, Ryan Appel, Loganaden Velvindron, Nick Sullivan,
-    and Rob Sayre
+Thanks to
+    Alicja Kario,
+    John Mattsson,
+    Rebecca Guthrie,
+    Alexander Bokovoy,
+    Niklas Block,
+    Ryan Appel,
+    Loganaden Velvindron,
+    Rob Sayre,
+    and Nick Sullivan
     for their review and feedback.
