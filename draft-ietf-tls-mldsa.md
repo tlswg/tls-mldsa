@@ -67,13 +67,13 @@ via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 
 {::boilerplate bcp14-tagged}
 
-# ML-DSA SignatureScheme values
+# ML-DSA SignatureScheme Values
 
 As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
 This document adds three new SignatureScheme values for the three
-ML-DSA parameter sets from {{FIPS204}} as follows.
+ML-DSA parameter sets listed in Section 4, Table 1 of {{FIPS204}} as follows.
 
 | SignatureScheme | FIPS 204  | Certificate SPKI AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
@@ -85,26 +85,28 @@ ML-DSA parameter sets from {{FIPS204}} as follows.
 Note that these are different from the HashML-DSA pre-hashed
 variants defined in Section 5.4 of {{FIPS204}}.
 
-## Certificate chain
+## Certificate Chain
 For the purpose of signalling support for signatures on certificates
 as per {{Section 4.2.3 of RFC8446}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
 as defined in {{MLDSACERTS}}.
 
-## Handshake signature
+## Handshake Signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
-{{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
+{{Section 4.4.3 of RFC8446}}, using
+Algorithm 2 (ML-DSA.Sign) and Algorithm 3 (ML-DSA.Verify)
+of {{FIPS204}} respectively. The context (ctx) parameter
+MUST be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of {{Section 4.4.3 of RFC8446}}.
+
+The corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier
 from {{schemes}} in its SubjectPublicKeyInfo.
 
 If the signature or public key is of the wrong length, the client MUST
 treat this as a verification failure, and thus terminate the handshake
 with `decrypt_error` alert.
-
-The context parameter defined in {{FIPS204}} Algorithm 2 and 3
-MUST be the empty string. Note that the context parameter of FIPS 204
-is different from the context string of {{Section 4.4.3 of RFC8446}}.
 
 ## TLS 1.2
 The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}
@@ -115,8 +117,8 @@ with an `illegal_parameter` alert.
 
 # Security Considerations
 
-The security considerations of {{RFC8446}} (eg. appendices C.2, E.1
-and Section 4.4.3) and {{FIPS204}} (Section 3.4 and 3.6) apply.
+The security considerations of {{RFC8446}} (eg. {{Appendix C.2 of RFC8446}}, {{Appendix E.1 of RFC8446}}
+and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
 
 # IANA Considerations
@@ -145,5 +147,6 @@ Thanks to
     Loganaden Velvindron,
     Rob Sayre,
     Daniel Van Geest,
+    Martin Thomson,
     and Nick Sullivan
     for their review and feedback.
