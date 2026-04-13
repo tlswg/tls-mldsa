@@ -117,7 +117,7 @@ with an `illegal_parameter` alert.
 
 # Security Considerations
 
-The security considerations of {{RFC8446}} (eg. {{Appendix C.2 of RFC8446}}, {{Appendix E.1 of RFC8446}}
+The security considerations of {{RFC8446}} (eg. {{Appendices C.2 and E.1 of RFC8446}}
 and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
 
