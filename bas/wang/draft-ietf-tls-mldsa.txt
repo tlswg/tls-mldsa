@@ -226,7 +226,8 @@ Acknowledgments
 
    Thanks to Alicja Kario, John Mattsson, Rebecca Guthrie, Alexander
    Bokovoy, Niklas Block, Ryan Appel, Loganaden Velvindron, Rob Sayre,
-   Daniel Van Geest, and Nick Sullivan for their review and feedback.
+   Daniel Van Geest, Wang Guilin, and Nick Sullivan for their review and
+   feedback.
 
 Authors' Addresses
 
