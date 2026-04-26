@@ -83,7 +83,9 @@ ML-DSA parameter sets from {{FIPS204}} as follows.
 {: #schemes title="SignatureSchemes for ML-DSA" }
 
 Note that these are different from the HashML-DSA pre-hashed
-variants defined in Section 5.4 of {{FIPS204}}.
+variants defined in Section 5.4 of {{FIPS204}},
+which are not used here
+because of the reasons laid out in {{Section 8.3 of MLDSACERTS}}.
 
 ## Certificate chain
 For the purpose of signalling support for signatures on certificates
@@ -145,5 +147,6 @@ Thanks to
     Loganaden Velvindron,
     Rob Sayre,
     Daniel Van Geest,
+    Wang Guilin,
     and Nick Sullivan
     for their review and feedback.
