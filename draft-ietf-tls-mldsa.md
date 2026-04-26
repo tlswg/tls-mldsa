@@ -67,13 +67,13 @@ via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 
 {::boilerplate bcp14-tagged}
 
-# ML-DSA SignatureScheme values
+# ML-DSA SignatureScheme Values
 
 As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
 This document adds three new SignatureScheme values for the three
-ML-DSA parameter sets from {{FIPS204}} as follows.
+ML-DSA parameter sets listed in Section 4, Table 1 of {{FIPS204}} as follows.
 
 | SignatureScheme | FIPS 204  | Certificate SPKI AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
@@ -87,16 +87,22 @@ variants defined in Section 5.4 of {{FIPS204}},
 which are not used here
 because of the reasons laid out in {{Section 8.3 of MLDSACERTS}}.
 
-## Certificate chain
+## Certificate Chain
 For the purpose of signalling support for signatures on certificates
 as per {{Section 4.2.3 of RFC8446}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
 as defined in {{MLDSACERTS}}.
 
-## Handshake signature
+## Handshake Signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
-{{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
+{{Section 4.4.3 of RFC8446}}, using
+Algorithm 2 (ML-DSA.Sign) and Algorithm 3 (ML-DSA.Verify)
+of {{FIPS204}} respectively. The context (ctx) parameter
+MUST be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of {{Section 4.4.3 of RFC8446}}.
+
+The corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier
 from {{schemes}} in its SubjectPublicKeyInfo.
 
@@ -113,8 +119,8 @@ with an `illegal_parameter` alert.
 
 # Security Considerations
 
-The security considerations of {{RFC8446}} (eg. appendices C.2, E.1
-and Section 4.4.3) and {{FIPS204}} (Section 3.4 and 3.6) apply.
+The security considerations of {{RFC8446}} (eg. {{Appendices C.2 and E.1 of RFC8446}}
+and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
 
 # IANA Considerations
@@ -145,6 +151,7 @@ Thanks to
     Viktor Dukhovni,
     Rob Sayre,
     Daniel Van Geest,
+    Martin Thomson,
     Wang Guilin,
     and Nick Sullivan
     for their review and feedback.
