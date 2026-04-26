@@ -10,7 +10,7 @@ date:
 consensus: true
 v: 3
 area: Security
-workgroup: Transport Layer Security§
+workgroup: Transport Layer Security
 keyword:
  - ML-DSA
  - FIPS204
@@ -75,15 +75,17 @@ the negotiation of signature scheme for authentication via the
 This document adds three new SignatureScheme values for the three
 ML-DSA parameter sets from {{FIPS204}} as follows.
 
-| SignatureScheme | FIPS 204  | Certificate AlgorithmIdentifier        |
+| SignatureScheme | FIPS 204  | Certificate SPKI AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
 | mldsa44(0x0904) | ML-DSA-44 | id-ML-DSA-44 (2.16.840.1.101.3.4.3.17) |
-| mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-64 (2.16.840.1.101.3.4.3.18) |
+| mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-65 (2.16.840.1.101.3.4.3.18) |
 | mldsa87(0x0906) | ML-DSA-87 | id-ML-DSA-87 (2.16.840.1.101.3.4.3.19) |
 {: #schemes title="SignatureSchemes for ML-DSA" }
 
 Note that these are different from the HashML-DSA pre-hashed
-variants defined in Section 5.4 of {{FIPS204}}.
+variants defined in Section 5.4 of {{FIPS204}},
+which are not used here
+because of the reasons laid out in {{Section 8.3 of MLDSACERTS}}.
 
 ## Certificate chain
 For the purpose of signalling support for signatures on certificates
@@ -95,7 +97,8 @@ as defined in {{MLDSACERTS}}.
 When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature MUST be computed and verified as specified in
 {{Section 4.4.3 of RFC8446}}, and the corresponding end-entity
-certificate MUST use the corresponding AlgorithmIdentifier from {{schemes}}.
+certificate MUST use the corresponding AlgorithmIdentifier
+from {{schemes}} in its SubjectPublicKeyInfo.
 
 The context parameter defined in {{FIPS204}} Algorithm 2 and 3
 MUST be the empty string. Note that the context parameter of FIPS 204
@@ -140,5 +143,8 @@ Thanks to
     Loganaden Velvindron,
     David Benjamin,
     Viktor Dukhovni,
+    Rob Sayre,
+    Daniel Van Geest,
+    Wang Guilin,
     and Nick Sullivan
     for their review and feedback.
