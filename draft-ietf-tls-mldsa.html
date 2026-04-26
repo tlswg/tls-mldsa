@@ -1300,9 +1300,9 @@ is different from the context string of <span><a href="https://rfc-editor.org/rf
 <p id="section-3.2-2">The corresponding end-entity
 certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier
 from <a href="#schemes" class="auto internal xref">Table 1</a> in its SubjectPublicKeyInfo.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
-<p id="section-3.2-3">If the signature or public key is of the wrong length, the client <span class="bcp14">MUST</span>
-treat this as a verification failure, and thus terminate the handshake
-with <code>decrypt_error</code> alert.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
+<p id="section-3.2-3">The context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2 and 3
+<span class="bcp14">MUST</span> be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="tls-12">
@@ -1434,6 +1434,8 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
     Niklas Block,
     Ryan Appel,
     Loganaden Velvindron,
+    David Benjamin,
+    Viktor Dukhovni,
     Rob Sayre,
     Daniel Van Geest,
     Martin Thomson,
