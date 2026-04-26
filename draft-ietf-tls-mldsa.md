@@ -44,6 +44,7 @@ informative:
  RFC5246:
  TLSIANA: RFC9847
  MLDSACERTS: RFC9881
+ I-D.ietf-lamps-pq-composite-sigs:
 
 
 
@@ -122,6 +123,8 @@ with an `illegal_parameter` alert.
 The security considerations of {{RFC8446}} (eg. {{Appendices C.2 and E.1 of RFC8446}}
 and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 
+{{Section 9.1 of I-D.ietf-lamps-pq-composite-sigs}} considers
+when a PQ/T could be preferred.
 
 # IANA Considerations
 
