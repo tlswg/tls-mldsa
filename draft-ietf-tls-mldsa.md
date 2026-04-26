@@ -106,9 +106,9 @@ The corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier
 from {{schemes}} in its SubjectPublicKeyInfo.
 
-If the signature or public key is of the wrong length, the client MUST
-treat this as a verification failure, and thus terminate the handshake
-with `decrypt_error` alert.
+The context parameter defined in {{FIPS204}} Algorithm 2 and 3
+MUST be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of {{Section 4.4.3 of RFC8446}}.
 
 ## TLS 1.2
 The schemes defined in this document MUST NOT be used in TLS 1.2 {{RFC5246}}
@@ -147,6 +147,8 @@ Thanks to
     Niklas Block,
     Ryan Appel,
     Loganaden Velvindron,
+    David Benjamin,
+    Viktor Dukhovni,
     Rob Sayre,
     Daniel Van Geest,
     Martin Thomson,
