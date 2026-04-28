@@ -75,7 +75,7 @@ the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
 This document maps three new SignatureScheme values for the three
 ML-DSA parameter sets listed in Section 4, Table 1 of {{FIPS204}}
-to the SignatureAlgorithmIdentifiers from {{RFC9981}} as follows as follows.
+to the SignatureAlgorithmIdentifiers from {{RFC9881}} as follows as follows.
 
 | SignatureScheme | FIPS 204  | Signature AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
