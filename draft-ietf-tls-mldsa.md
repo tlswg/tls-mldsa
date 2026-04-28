@@ -87,13 +87,13 @@ to the SignatureAlgorithmIdentifiers from {{RFC9981}} as follows as follows.
 Note that these are different from the HashML-DSA pre-hashed
 variants defined in Section 5.4 of {{FIPS204}},
 which are not used here
-because of the reasons laid out in {{Section 8.3 of MLDSACERTS}}.
+because of the reasons laid out in {{Section 8.3 of RFC9881}}.
 
 ## Certificate Chain
 For the purpose of signalling support for signatures on certificates
 as per {{Section 4.2.3 of RFC8446}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
-as defined in {{MLDSACERTS}}.
+as defined in {{RFC9881}}.
 
 ## Handshake Signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
