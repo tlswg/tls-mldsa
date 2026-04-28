@@ -39,11 +39,12 @@ author:
 
 normative:
  RFC8446:
+ RFC9881:
 
 informative:
  RFC5246:
- TLSIANA: RFC9847
- MLDSACERTS: RFC9881
+ RFC9847:
+
 
 
 
@@ -72,10 +73,11 @@ via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
-This document adds three new SignatureScheme values for the three
-ML-DSA parameter sets listed in Section 4, Table 1 of {{FIPS204}} as follows.
+This document maps three new SignatureScheme values for the three
+ML-DSA parameter sets listed in Section 4, Table 1 of {{FIPS204}}
+to the SignatureAlgorithmIdentifiers from {{RFC9881}} as follows as follows.
 
-| SignatureScheme | FIPS 204  | Certificate SPKI AlgorithmIdentifier   |
+| SignatureScheme | FIPS 204  | Signature AlgorithmIdentifier   |
 |-----------------|-----------|----------------------------------------|
 | mldsa44(0x0904) | ML-DSA-44 | id-ML-DSA-44 (2.16.840.1.101.3.4.3.17) |
 | mldsa65(0x0905) | ML-DSA-65 | id-ML-DSA-65 (2.16.840.1.101.3.4.3.18) |
@@ -85,13 +87,13 @@ ML-DSA parameter sets listed in Section 4, Table 1 of {{FIPS204}} as follows.
 Note that these are different from the HashML-DSA pre-hashed
 variants defined in Section 5.4 of {{FIPS204}},
 which are not used here
-because of the reasons laid out in {{Section 8.3 of MLDSACERTS}}.
+because of the reasons laid out in {{Section 8.3 of RFC9881}}.
 
 ## Certificate Chain
 For the purpose of signalling support for signatures on certificates
 as per {{Section 4.2.3 of RFC8446}}, these values indicate support
 for signing using the given AlgorithmIdentifier shown in {{schemes}}
-as defined in {{MLDSACERTS}}.
+as defined in {{RFC9881}}.
 
 ## Handshake Signature
 When one of those SignatureScheme values is used in a CertificateVerify message,
@@ -126,7 +128,7 @@ and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4 and 3.6) apply.
 # IANA Considerations
 
 This document requests new entries to the TLS SignatureScheme registry,
-according to the procedures in {{Section 6 of TLSIANA}}.
+according to the procedures in {{Section 6 of RFC9847}}.
 
 | Value   | Description | Recommended | Reference      |
 |---------|-------------|-------------|----------------|
