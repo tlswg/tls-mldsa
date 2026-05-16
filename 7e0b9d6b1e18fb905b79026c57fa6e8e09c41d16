@@ -1,0 +1,23 @@
+draft-ietf-tls-mldsa.md
+  489b7471cd3c3607 61-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "7e0b9d6b1e18fb905b79026c57fa6e8e09c41d16",
+  "prompts": {
+    "489b7471cd3c3607": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1cf27df00ffesrF0PTUdTj2ch8",
+        "model": "anthropic/claude-opus-4-7"
+      },
+      "human_author": "Bas Westerbaan",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 2,
+      "accepted_lines": 4,
+      "overriden_lines": 0
+    }
+  }
+}
