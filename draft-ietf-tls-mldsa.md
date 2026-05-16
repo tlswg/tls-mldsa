@@ -72,6 +72,12 @@ via the `signature_algorithms` and `signature_algorithms_cert` extensions.
 
 # ML-DSA SignatureScheme Values
 
+{:aside}
+> Note to RFC editor: References to RFC 8446 are to be updated
+> to reference RFC 9846 (RFC 8446bis) once it is published.
+> Section references need to be updated accordingly.
+> PR: <https://github.com/tlswg/tls-mldsa/pull/25>
+
 As defined in {{RFC8446}}, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 `signature_algorithms` and `signature_algorithms_cert` extensions.
