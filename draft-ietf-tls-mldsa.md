@@ -58,8 +58,10 @@ is used for authentication in TLS 1.3.
 
 # Introduction
 
-ML-DSA is a post-quantum module-lattice-based digital signature algorithm
-standardised by NIST in {{!FIPS204=DOI.10.6028/NIST.FIPS.204}}.
+The Module-Lattice-Based Digital Signature Algorithm (ML-DSA) is a
+post-quantum digital signature algorithm
+standardised by the US National Institute of Standards and Technology (NIST)
+in {{!FIPS204=DOI.10.6028/NIST.FIPS.204}}.
 
 This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
 via the `signature_algorithms` and `signature_algorithms_cert` extensions.
