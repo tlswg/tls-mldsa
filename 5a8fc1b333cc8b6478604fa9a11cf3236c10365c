@@ -1,0 +1,21 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "5a8fc1b333cc8b6478604fa9a11cf3236c10365c",
+  "prompts": {
+    "489b7471cd3c3607": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1cf27df00ffesrF0PTUdTj2ch8",
+        "model": "anthropic/claude-opus-4-7"
+      },
+      "human_author": "Bas Westerbaan",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  }
+}
