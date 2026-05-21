@@ -122,8 +122,13 @@ with an `illegal_parameter` alert.
 # Security Considerations
 
 The security considerations of {{RFC8446}} (eg. {{Appendices C.2 and E.1 of RFC8446}}
-and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4 and 3.6) apply.
+and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4) apply.
 
+Section 3.6 of {{FIPS204}} discusses the potential side-channel risks
+when using the determinisitic signing variant of ML-DSA over the *hedged*
+variant. These do not apply to TLS 1.3 as the same message is never
+signed twice thanks to the inclusion of both server and client chosen
+randomness in the transcript.
 
 # IANA Considerations
 
@@ -155,5 +160,6 @@ Thanks to
     Daniel Van Geest,
     Martin Thomson,
     Wang Guilin,
+    Ilari Liusvaara,
     and Nick Sullivan
     for their review and feedback.
