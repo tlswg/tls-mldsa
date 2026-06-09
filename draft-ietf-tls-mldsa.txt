@@ -74,7 +74,6 @@ Table of Contents
    3.  ML-DSA SignatureScheme Values
      3.1.  Certificate Chain
      3.2.  Handshake Signature
-     3.3.  TLS 1.2
    4.  Security Considerations
    5.  IANA Considerations
    6.  References
@@ -152,14 +151,6 @@ Table of Contents
    the empty string.  Note that the context parameter of FIPS 204 is
    different from the context string of Section 4.4.3 of [RFC8446].
 
-3.3.  TLS 1.2
-
-   The schemes defined in this document MUST NOT be used in TLS 1.2
-   [RFC5246] or earlier versions.  A peer that receives
-   ServerKeyExchange or CertificateVerify message in a TLS 1.2
-   connection with schemes defined in this document MUST abort the
-   connection with an illegal_parameter alert.
-
 4.  Security Considerations
 
    The security considerations of [RFC8446] (eg.  Appendices C.2 and E.1
@@ -213,11 +204,6 @@ Table of Contents
               <https://www.rfc-editor.org/rfc/rfc9881>.
 
 6.2.  Informative References
-
-   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
-              (TLS) Protocol Version 1.2", RFC 5246,
-              DOI 10.17487/RFC5246, August 2008,
-              <https://www.rfc-editor.org/rfc/rfc5246>.
 
    [RFC9847]  Salowey, J. and S. Turner, "IANA Registry Updates for TLS
               and DTLS", RFC 9847, DOI 10.17487/RFC9847, December 2025,

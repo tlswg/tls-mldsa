@@ -1172,9 +1172,6 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
                 <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-handshake-signature" class="internal xref">Handshake Signature</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
-                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-tls-12" class="internal xref">TLS 1.2</a></p>
-</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
@@ -1304,18 +1301,6 @@ from <a href="#schemes" class="auto internal xref">Table 1</a> in its SubjectPub
 is different from the context string of <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="tls-12">
-<section id="section-3.3">
-        <h3 id="name-tls-12">
-<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-tls-12" class="section-name selfRef">TLS 1.2</a>
-        </h3>
-<p id="section-3.3-1">The schemes defined in this document <span class="bcp14">MUST NOT</span> be used in TLS 1.2 <span>[<a href="#RFC5246" class="cite xref">RFC5246</a>]</span>
-or earlier versions.
-A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
-1.2 connection with schemes defined in this document <span class="bcp14">MUST</span> abort the connection
-with an <code>illegal_parameter</code> alert.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
-</section>
-</div>
 </section>
 </div>
 <div id="security-considerations">
@@ -1407,10 +1392,6 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC5246">[RFC5246]</dt>
-        <dd>
-<span class="refAuthor">Dierks, T.</span> and <span class="refAuthor">E. Rescorla</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.2"</span>, <span class="seriesInfo">RFC 5246</span>, <span class="seriesInfo">DOI 10.17487/RFC5246</span>, <time datetime="2008-08" class="refDate">August 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5246">https://www.rfc-editor.org/rfc/rfc5246</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC9847">[RFC9847]</dt>
       <dd>
 <span class="refAuthor">Salowey, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"IANA Registry Updates for TLS and DTLS"</span>, <span class="seriesInfo">RFC 9847</span>, <span class="seriesInfo">DOI 10.17487/RFC9847</span>, <time datetime="2025-12" class="refDate">December 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9847">https://www.rfc-editor.org/rfc/rfc9847</a>&gt;</span>. </dd>
