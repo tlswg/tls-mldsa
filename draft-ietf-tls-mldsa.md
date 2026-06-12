@@ -121,8 +121,17 @@ is different from the context string of {{Section 4.4.3 of RFC8446}}.
 
 # Security Considerations
 
-The security considerations of {{RFC8446}} (eg. {{Appendices C.2 and E.1 of RFC8446}}
-and {{Section 4.4.3 of RFC8446}}) and {{FIPS204}} (Section 3.4 and 3.6) apply.
+The security considerations described in {{Appendices C.2 and E.1 of RFC8446}}
+and {{Section 4.4.3 of RFC8446}} apply. In particular, signature-based modes of
+TLS depend on the signature scheme being secure against chosen message
+attacks {{?SIGMA=DOI.10.1007/978-3-540-45146-4_24}}. Per Section 3.1 of
+{{FIPS204}}, ML-DSA is designed to meet this property.
+
+Implementation failures, such as side channels, in cryptographic primitives can
+also compromise the primitive and thus a TLS connection depending on it.
+Sections 3.4 and 3.6 of {{FIPS204}} discuss additional considerations for
+implementing ML-DSA, including guidance on the choice of hedged vs deterministic
+variants. These considerations apply when ML-DSA is used for TLS.
 
 
 # IANA Considerations
