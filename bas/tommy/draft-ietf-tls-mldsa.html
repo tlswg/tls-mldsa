@@ -12,23 +12,24 @@
        This memo specifies how the post-quantum signature scheme ML-DSA (FIPS 204)
 is used for authentication in TLS 1.3. 
     " name="description">
-<meta content="xml2rfc 3.32.0" name="generator">
+<meta content="xml2rfc 3.34.0" name="generator">
 <meta content="ML-DSA" name="keyword">
 <meta content="FIPS204" name="keyword">
 <meta content="draft-ietf-tls-mldsa-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.32.0
-    Python 3.12.12
-    ConfigArgParse 1.7
+  xml2rfc 3.34.0
+    Python 3.14.5
+    ConfigArgParse 1.7.5
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
-    lxml 6.0.2
-    platformdirs 4.9.4
+    lxml 6.1.1
+    natsort 8.4.0
+    platformdirs 4.10.0
     pycountry 24.6.1
     PyYAML 6.0.3
-    requests 2.32.5
-    wcwidth 0.6.0
+    requests 2.33.1
+    wcwidth 0.8.1
 -->
 <link href="draft-ietf-tls-mldsa.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -295,16 +296,19 @@ h1, h2, h3, h4, h5, h6 {
   font-size-adjust: 0.5;
   color: var(--title-color);
 }
-h1#title {
-  font-size: 32px;
-  line-height: 40px;
-  clear: both;
-}
-h1#title, h1#rfcnum {
-  margin: 1.5em 0 0.2em;
-}
-h1#rfcnum + h1#title {
-  margin: 0.2em 0;
+h1 {
+  &#title {
+    font-size: 32px;
+    line-height: 40px;
+    clear: both;
+    margin: 1.5em 0 0.2em;
+  }
+  &#rfcnum {
+    margin: 1.5em 0 0.2em;
+    & + h1#title {
+      margin: 0.2em 0;
+    }
+  }
 }
 
 h1, h2, h3 {
@@ -324,10 +328,10 @@ h4, h5, h6 {
 #abstract+p {
   font-size: 18px;
   line-height: 24px;
-}
-#abstract+p code, #abstract+p samp, #abstract+p tt {
-  font-size: 16px;
-  line-height: 0;
+  & code, & samp, & tt {
+    font-size: 16px;
+    line-height: 0;
+  }
 }
 
 p {
@@ -338,59 +342,59 @@ p {
 div {
   margin: 0;
 }
-.alignRight.art-text {
-  background-color: var(--highlight-color);
-  border: 1px solid var(--line-color);
-  border-radius: 3px;
-  padding: 0.5em 1em 0;
-  margin-bottom: 0.5em;
-}
-.alignRight.art-text pre {
-  padding: 0;
-  width: auto;
-}
 .alignRight {
   margin: 1em 0;
-}
-.alignRight > *:first-child {
-  border: none;
-  margin: 0;
-  float: right;
-  clear: both;
-}
-.alignRight > *:nth-child(2) {
-  clear: both;
-  display: block;
-  border: none;
+  &.art-text {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--line-color);
+    border-radius: 3px;
+    padding: 0.5em 1em 0;
+    margin-bottom: 0.5em;
+    & pre {
+      padding: 0;
+      width: auto;
+    }
+  }
+  & > *:first-child {
+    border: none;
+    margin: 0;
+    float: right;
+    clear: both;
+  }
+  & > *:nth-child(2) {
+    clear: both;
+    display: block;
+    border: none;
+  }
 }
 svg {
   display: block;
-}
-/* font-family isn't space-separated, but =~ will have to do */
-svg[font-family~="monospace" i], svg [font-family~="monospace" i] {
-  font-family: var(--font-mono);
-}
-.alignCenter.art-text {
-  background-color: var(--highlight-color);
-  border: 1px solid var(--line-color);
-  border-radius: 3px;
-  padding: 0.5em 1em 0;
-  margin-bottom: 0.5em;
-}
-.alignCenter.art-text pre {
-  padding: 0;
-  width: auto;
+  /* font-family isn't space-separated, but =~ will have to do */
+  &[font-family~="monospace" i], & [font-family~="monospace" i] {
+    font-family: var(--font-mono);
+  }
 }
 .alignCenter {
   margin: 1em 0;
-}
-.alignCenter > *:first-child {
-  border: none;
-  /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
-     support flexbox yet.
-  */
-  display: table;
-  margin: 0 auto;
+  &.art-text {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--line-color);
+    border-radius: 3px;
+    padding: 0.5em 1em 0;
+    margin-bottom: 0.5em;
+    & pre {
+      padding: 0;
+      width: auto;
+    }
+  }
+  & > *:first-child {
+    border: none;
+    /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+       support flexbox yet.
+    */
+    display: table;
+    margin: 0 auto;
+  }
 }
 
 /* lists */
@@ -428,26 +432,25 @@ dl {
     --indent: 5ch;
     & > dt {
       min-width: calc(var(--indent) - 2ch);
+      float: none;
     }
-  }
-  &.olPercent > dt {
-    float: none;
   }
 
   dl > dd > & {
     margin-top: 0.5em;
     margin-bottom: 0;
   }
-}
-dl:not(.dlNewline) > dt {
-  float: left;
-  margin-right: 2ch;
-  min-width: 8ch;
-}
-dl > dd {
-  margin-bottom: .8em;
-  margin-left: var(--indent) !important; /* stupid element overrides */
-  min-height: 2ex;
+
+  &:not(.dlNewline) > dt {
+    float: left;
+    margin-right: 2ch;
+    min-width: 8ch;
+  }
+  & > dd {
+    margin-bottom: .8em;
+    margin-left: var(--indent) !important; /* stupid element overrides */
+    min-height: 2ex;
+  }
 }
 :is(dl.compact, .dlCompact) > dd {
   margin-bottom: 0;
@@ -463,20 +466,22 @@ dl > dd {
 }
 
 /* links */
-a, a[href].selfRef:hover {
+a {
   text-decoration: none;
+  &[href] {
+    color: var(--link-color);
+    &:hover { text-decoration: underline; }
+    &.selfRef {
+      color: var(--text-color);
+      &:hover {
+        text-decoration: none;
+        background-color: var(--highlight-color);
+      }
+    }
+  }
 }
-a[href] {
-  color: var(--link-color);
-}
-a[href].selfRef, .iref + a[href].internal {
+.iref + a[href].internal {
   color: var(--text-color);
-}
-a[href]:hover {
-  text-decoration: underline;
-}
-a[href].selfRef:hover {
-  background-color: var(--highlight-color);
 }
 a.xref:is(.cite, .auto), :is(#status-of-memo, #copyright) a {
   white-space: nowrap;
@@ -512,9 +517,9 @@ img {
 figure {
   margin: 0.5em 0;
   padding: 0;
-}
-figure blockquote {
-  margin: 0.8em 0.4em 0.4em;
+  & blockquote {
+    margin: 0.8em 0.4em 0.4em;
+  }
 }
 figcaption, caption {
   font-style: italic;
@@ -524,17 +529,19 @@ figcaption, caption {
 }
 @media screen {
   /* Auto-collapse boilerplate. */
-  :is(#status-of-memo, #copyright) p {
-    margin: -2px 0;
-    max-height: 0;
-    transition: max-height 2s ease, margin 0.5s ease 0.5s;
-    overflow: hidden;
-  }
-  :is(#status-of-memo, #copyright):hover p,
-  :is(#status-of-memo, #copyright) h2:target ~ p {
-    margin: 0.5em 0;
-    max-height: 500px;
-    overflow: auto;
+  :is(#status-of-memo, #copyright) {
+    & p {
+      margin: -2px 0;
+      max-height: 0;
+      transition: max-height 2s ease, margin 0.5s ease 0.5s;
+      overflow: hidden;
+    }
+    &:hover p,
+    & h2:target ~ p {
+      margin: 0.5em 0;
+      max-height: 500px;
+      overflow: auto;
+    }
   }
   pre, svg {
     display: inline-block;
@@ -584,25 +591,17 @@ table {
   max-width: 100%;
   margin: 0 0 1em;
   border-collapse: collapse;
-}
-table.right {
-  margin-left: auto;
-}
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-table.left {
-  margin-right: auto;
-}
-table .text-left {
-  text-align: left;
-}
-table .text-center {
-  text-align: center;
-}
-table .text-right {
-  text-align: right;
+  &.right { margin-left: auto; }
+  &.center { margin-left: auto; margin-right: auto; }
+  &.left { margin-right: auto; }
+  & .text-left { text-align: left; }
+  & .text-center { text-align: center; }
+  & .text-right { text-align: right; }
+  & caption {
+    margin: 0;
+    padding: 3px 0 3px 1em;
+  }
+  & p { margin: 0; }
 }
 
 thead, tbody {
@@ -622,13 +621,6 @@ th {
 :is(tr:nth-child(2n+1), thead+tbody > tr:nth-child(2n)) > td {
   background-color: var(--highlight-color);
 }
-table caption {
-  margin: 0;
-  padding: 3px 0 3px 1em;
-}
-table p {
-  margin: 0;
-}
 
 /* pilcrow */
 a.pilcrow {
@@ -639,18 +631,16 @@ a.pilcrow {
     color: var(--pilcrow-weak);
     &:hover { text-decoration: none; }
   }
-}
-@media not print {
-  :hover > a.pilcrow, a.pilcrow:focus {
-    opacity: 1;
+  @media not print {
+    :hover > &, &:focus {
+      opacity: 1;
+    }
+    &[href]:hover {
+      color: var(--pilcrow-strong);
+      background-color: transparent;
+    }
   }
-  a.pilcrow[href]:hover {
-    color: var(--pilcrow-strong);
-    background-color: transparent;
-  }
-}
-@media print {
-  a.pilcrow {
+  @media print {
     display: none;
   }
 }
@@ -709,9 +699,9 @@ sub, sup {
   font-size: 0.9em;
   font-style: italic;
   margin-top: 2em;
-}
-.docInfo .prepared {
-  float: right;
+  & .prepared {
+    float: right;
+  }
 }
 
 /* table of contents */
@@ -801,23 +791,27 @@ hr.addr {
   max-width: calc(100% - 16px);
 }
 @media (min-width: 500px) {
-  #authors-addresses > section {
-    column-count: 2;
-    column-gap: 20px;
-  }
-  #authors-addresses > section > h2 {
-    column-span: all;
-  }
-  /* hack for break-inside: avoid-column */
-  #authors-addresses address {
-    display: inline-block;
-    break-inside: avoid-column;
+  #authors-addresses {
+    & > section {
+      column-count: 2;
+      column-gap: 20px;
+    }
+    & > section > h2 {
+      column-span: all;
+    }
+    /* hack for break-inside: avoid-column */
+    & address {
+      display: inline-block;
+      break-inside: avoid-column;
+    }
   }
 }
 
 /* Comments */
-.rfcEditorRemove p:first-of-type {
-  font-style: italic;
+.rfcEditorRemove {
+  & p:first-of-type {
+    font-style: italic;
+  }
 }
 .cref {
   background-color: rgba(249, 232, 105, 0.3);
@@ -828,19 +822,21 @@ hr.addr {
 }
 
 @media screen {
-  #toc nav {
-    font-family: var(--font-title);
-    font-weight: 360;
-    & > ul { margin-bottom: 2em; }
-    & ul {
-      margin: 0 0 0 4px;
-      & :is(p, li) {
-        margin: 2px 0;
+  #toc {
+    & nav {
+      font-family: var(--font-title);
+      font-weight: 360;
+      & > ul { margin-bottom: 2em; }
+      & ul {
+        margin: 0 0 0 4px;
+        & :is(p, li) {
+          margin: 2px 0;
+        }
       }
     }
-  }
-  #toc a.toplink {
-    float: right;
+    & a.toplink {
+      float: right;
+    }
   }
 }
 @media not screen {
@@ -861,54 +857,54 @@ hr.addr {
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
-  }
-  #toc h2 {
-    margin: 0;
-    padding: 2px 0 2px 6px;
-    padding-right: 1em;
-    font-size: 18px;
-    line-height: 24px;
-    min-width: 190px;
-    text-align: right;
-    background-color: #444;
-    color: white;
-    cursor: pointer;
-    &::before { /* css hamburger */
-      float: right;
-      position: relative;
-      width: 1em;
-      height: 1px;
-      left: -164px;
-      margin: 8px 0 0 0;
-      background: white none repeat scroll 0 0;
-      box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
-      content: "";
+    & h2 {
+      margin: 0;
+      padding: 2px 0 2px 6px;
+      padding-right: 1em;
+      font-size: 18px;
+      line-height: 24px;
+      min-width: 190px;
+      text-align: right;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      &::before { /* css hamburger */
+        float: right;
+        position: relative;
+        width: 1em;
+        height: 1px;
+        left: -164px;
+        margin: 8px 0 0 0;
+        background: white none repeat scroll 0 0;
+        box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+        content: "";
+      }
     }
-  }
-  #toc nav {
-    display: none;
-    background-color: var(--background-color);
-    padding: 0.5em 1em 1em;
-    overflow: auto;
-    overscroll-behavior: contain;
-    height: calc(100vh - 48px);
-    border-left: 1px solid #ddd;
-  }
-  #toc.active {
-    opacity: 1;
-    & nav { display: block; }
-  }
-  /* Make the collapsed ToC header render white on gray also when it's a link */
-  #toc h2 a,
-  #toc h2 a:is(:link, :focus, :hover),
-  #toc a.toplink,
-  #toc a.toplink:hover {
-    color: white;
-    background-color: #444;
-    text-decoration: none;
-  }
-  #toc a.toplink {
-    margin: 2px 0.5em 0;
+    & nav {
+      display: none;
+      background-color: var(--background-color);
+      padding: 0.5em 1em 1em;
+      overflow: auto;
+      overscroll-behavior: contain;
+      height: calc(100vh - 48px);
+      border-left: 1px solid #ddd;
+    }
+    &.active {
+      opacity: 1;
+      & nav { display: block; }
+    }
+    /* Make the collapsed ToC header render white on gray also when it's a link */
+    & h2 a,
+    & h2 a:is(:link, :focus, :hover),
+    & a.toplink,
+    & a.toplink:hover {
+      color: white;
+      background-color: #444;
+      text-decoration: none;
+    }
+    & a.toplink {
+      margin: 2px 0.5em 0;
+    }
   }
 }
 
@@ -927,26 +923,26 @@ hr.addr {
     margin: 0;
     padding: 0;
     z-index: 1;
-  }
-  #toc h2 {
-    margin: 0;
-    padding: 0.25em 1em 1em 0;
-  }
-  #toc nav {
-    display: block;
-    height: calc(90vh - 84px);
-    bottom: 0;
-    padding: 0.5em 0 2em;
-    overflow: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
+    & h2 {
+      margin: 0;
+      padding: 0.25em 1em 1em 0;
+    }
+    & nav {
+      display: block;
+      height: calc(90vh - 84px);
+      bottom: 0;
+      padding: 0.5em 0 2em;
+      overflow: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+    }
+    & a.toplink {
+      margin: 8px 0.5em 0;
+    }
   }
   img { /* future proofing */
     max-width: 100%;
     height: auto;
-  }
-  #toc a.toplink {
-    margin: 8px 0.5em 0;
   }
 }
 
@@ -962,12 +958,13 @@ hr.addr {
   #n-copyright-notice {
     border-bottom: none;
   }
-  #toc, #n-introduction {
-    page-break-before: always;
-  }
   #toc {
+    page-break-before: always;
     border-top: none;
     padding-top: 0;
+  }
+  #n-introduction {
+    page-break-before: always;
   }
   figure, pre, .vcard {
     page-break-inside: avoid;
@@ -1029,17 +1026,19 @@ hr.addr {
 }
 
 /* SVG Trick: a prefix match works because only black and white are allowed */
-svg :is([stroke="black"], [stroke^="#000"]) {
-  stroke: var(--text-color);
-}
-svg :is([stroke="white"], [stroke^="#fff"]) {
-  stroke: var(--background-color);
-}
-svg :is([fill="black"], [fill^="#000"], :not([fill])) {
-  fill: var(--text-color);
-}
-svg :is([fill="white"], [fill^="#fff"]) {
-  fill: var(--background-color);
+svg {
+  & :is([stroke="black"], [stroke^="#000"]) {
+    stroke: var(--text-color);
+  }
+  & :is([stroke="white"], [stroke^="#fff"]) {
+    stroke: var(--background-color);
+  }
+  & :is([fill="black"], [fill^="#000"], :not([fill])) {
+    fill: var(--text-color);
+  }
+  & :is([fill="white"], [fill^="#fff"]) {
+    fill: var(--background-color);
+  }
 }
 </style>
 
@@ -1049,11 +1048,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Use of ML-DSA in TLS 1.3</td>
-<td class="right">April 2026</td>
+<td class="right">July 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Hollebeek, et al.</td>
-<td class="center">Expires 12 October 2026</td>
+<td class="center">Expires 3 January 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1061,17 +1060,17 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">Transport Layer Security§</dd>
+<dd class="workgroup">Transport Layer Security</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
 <dd class="internet-draft">draft-ietf-tls-mldsa-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-04-10" class="published">10 April 2026</time>
+<time datetime="2026-07-02" class="published">2 July 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-10-12">12 October 2026</time></dd>
+<dd class="expires"><time datetime="2027-01-03">3 January 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1130,7 +1129,7 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 12 October 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 January 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1166,16 +1165,13 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-ml-dsa-signaturescheme-valu" class="internal xref">ML-DSA SignatureScheme values</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-ml-dsa-signaturescheme-valu" class="internal xref">ML-DSA SignatureScheme Values</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
-                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-certificate-chain" class="internal xref">Certificate chain</a></p>
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-certificate-chain" class="internal xref">Certificate Chain</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
-                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-handshake-signature" class="internal xref">Handshake signature</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
-                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-tls-12" class="internal xref">TLS 1.2</a></p>
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-handshake-signature" class="internal xref">Handshake Signature</a></p>
 </li>
             </ul>
 </li>
@@ -1211,8 +1207,10 @@ is used for authentication in TLS 1.3.<a href="#section-abstract-1" class="pilcr
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">ML-DSA is a post-quantum module-lattice-based digital signature algorithm
-standardised by NIST in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">The Module-Lattice-Based Digital Signature Algorithm (ML-DSA) is a
+post-quantum digital signature algorithm
+standardised by the US National Institute of Standards and Technology (NIST)
+in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">This memo specifies how ML-DSA can be negotiated for authentication in TLS 1.3
 via the <code>signature_algorithms</code> and <code>signature_algorithms_cert</code> extensions.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
@@ -1231,13 +1229,20 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <div id="ml-dsa-signaturescheme-values">
 <section id="section-3">
       <h2 id="name-ml-dsa-signaturescheme-valu">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-ml-dsa-signaturescheme-valu" class="section-name selfRef">ML-DSA SignatureScheme values</a>
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-ml-dsa-signaturescheme-valu" class="section-name selfRef">ML-DSA SignatureScheme Values</a>
       </h2>
-<p id="section-3-1">As defined in <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, the SignatureScheme namespace is used for
+<aside id="section-3-1">
+        <p id="section-3-1.1">Note to RFC editor: References to RFC 8446 are to be updated
+to reference RFC 9846 (RFC 8446bis) once it is published.
+Section references need to be updated accordingly.
+PR: <a href="https://github.com/tlswg/tls-mldsa/pull/25">https://github.com/tlswg/tls-mldsa/pull/25</a><a href="#section-3-1.1" class="pilcrow">¶</a></p>
+</aside>
+<p id="section-3-2">As defined in <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, the SignatureScheme namespace is used for
 the negotiation of signature scheme for authentication via the
 <code>signature_algorithms</code> and <code>signature_algorithms_cert</code> extensions.
-This document adds three new SignatureScheme values for the three
-ML-DSA parameter sets from <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> as follows.<a href="#section-3-1" class="pilcrow">¶</a></p>
+This document maps three new SignatureScheme values for the three
+ML-DSA parameter sets listed in Section 4, Table 1 of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>
+to the SignatureAlgorithmIdentifiers from <span>[<a href="#RFC9881" class="cite xref">RFC9881</a>]</span> as follows.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <span id="name-signatureschemes-for-ml-dsa"></span><div id="schemes">
 <table class="center" id="table-1">
         <caption>
@@ -1248,7 +1253,7 @@ ML-DSA parameter sets from <span>[<a href="#FIPS204" class="cite xref">FIPS204</
           <tr>
             <th class="text-left" rowspan="1" colspan="1">SignatureScheme</th>
             <th class="text-left" rowspan="1" colspan="1">FIPS 204</th>
-            <th class="text-left" rowspan="1" colspan="1">Certificate AlgorithmIdentifier</th>
+            <th class="text-left" rowspan="1" colspan="1">Signature AlgorithmIdentifier</th>
           </tr>
         </thead>
         <tbody>
@@ -1260,7 +1265,7 @@ ML-DSA parameter sets from <span>[<a href="#FIPS204" class="cite xref">FIPS204</
           <tr>
             <td class="text-left" rowspan="1" colspan="1">mldsa65(0x0905)</td>
             <td class="text-left" rowspan="1" colspan="1">ML-DSA-65</td>
-            <td class="text-left" rowspan="1" colspan="1">id-ML-DSA-64 (2.16.840.1.101.3.4.3.18)</td>
+            <td class="text-left" rowspan="1" colspan="1">id-ML-DSA-65 (2.16.840.1.101.3.4.3.18)</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">mldsa87(0x0906)</td>
@@ -1270,46 +1275,39 @@ ML-DSA parameter sets from <span>[<a href="#FIPS204" class="cite xref">FIPS204</
         </tbody>
       </table>
 </div>
-<p id="section-3-3">Note that these are different from the HashML-DSA pre-hashed
-variants defined in Section 5.4 of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">Note that these are different from the HashML-DSA pre-hashed
+variants defined in Section 5.4 of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>,
+which are not used here
+because of the reasons laid out in <span><a href="https://rfc-editor.org/rfc/rfc9881#section-8.3" class="relref">Section 8.3</a> of [<a href="#RFC9881" class="cite xref">RFC9881</a>]</span>.<a href="#section-3-4" class="pilcrow">¶</a></p>
 <div id="certificate-chain">
 <section id="section-3.1">
         <h3 id="name-certificate-chain">
-<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-certificate-chain" class="section-name selfRef">Certificate chain</a>
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-certificate-chain" class="section-name selfRef">Certificate Chain</a>
         </h3>
 <p id="section-3.1-1">For the purpose of signalling support for signatures on certificates
 as per <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.2.3" class="relref">Section 4.2.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, these values indicate support
 for signing using the given AlgorithmIdentifier shown in <a href="#schemes" class="auto internal xref">Table 1</a>
-as defined in <span>[<a href="#MLDSACERTS" class="cite xref">MLDSACERTS</a>]</span>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+as defined in <span>[<a href="#RFC9881" class="cite xref">RFC9881</a>]</span>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="handshake-signature">
 <section id="section-3.2">
         <h3 id="name-handshake-signature">
-<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-handshake-signature" class="section-name selfRef">Handshake signature</a>
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-handshake-signature" class="section-name selfRef">Handshake Signature</a>
         </h3>
 <p id="section-3.2-1">When one of those SignatureScheme values is used in a CertificateVerify message,
 then the signature <span class="bcp14">MUST</span> be computed and verified as specified in
-<span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, and the corresponding end-entity
-certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier from <a href="#schemes" class="auto internal xref">Table 1</a>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
-<p id="section-3.2-2">If the signature is of the wrong length, the verifying peer <span class="bcp14">MUST</span>
-treat this a verification failure, and thus terminate the handshake
-with <code>decrypt_error</code> alert.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+<span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>, using
+Algorithm 2 (ML-DSA.Sign) and Algorithm 3 (ML-DSA.Verify)
+of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> respectively. The context (ctx) parameter
+<span class="bcp14">MUST</span> be the empty string. Note that the context parameter of FIPS 204
+is different from the context string of <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">The corresponding end-entity
+certificate <span class="bcp14">MUST</span> use the corresponding AlgorithmIdentifier
+from <a href="#schemes" class="auto internal xref">Table 1</a> in its SubjectPublicKeyInfo.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
 <p id="section-3.2-3">The context parameter defined in <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> Algorithm 2 and 3
 <span class="bcp14">MUST</span> be the empty string. Note that the context parameter of FIPS 204
 is different from the context string of <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="tls-12">
-<section id="section-3.3">
-        <h3 id="name-tls-12">
-<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-tls-12" class="section-name selfRef">TLS 1.2</a>
-        </h3>
-<p id="section-3.3-1">The schemes defined in this document <span class="bcp14">MUST NOT</span> be used in TLS 1.2 <span>[<a href="#RFC5246" class="cite xref">RFC5246</a>]</span>
-or earlier versions.
-A peer that receives ServerKeyExchange or CertificateVerify message in a TLS
-1.2 connection with schemes defined in this document <span class="bcp14">MUST</span> abort the connection
-with an <code>illegal_parameter</code> alert.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1319,8 +1317,16 @@ with an <code>illegal_parameter</code> alert.<a href="#section-3.3-1" class="pil
       <h2 id="name-security-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-4-1">The security considerations of <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span> (eg. appendices C.2, E.1
-and Section 4.4.3) and <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> (Section 3.4 and 3.6) apply.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">The security considerations described in Appendices <a href="https://rfc-editor.org/rfc/rfc8446#appendix-C.2" class="relref">C.2</a> and <a href="https://rfc-editor.org/rfc/rfc8446#appendix-E.1" class="relref">E.1</a> of <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>
+and <span><a href="https://rfc-editor.org/rfc/rfc8446#section-4.4.3" class="relref">Section 4.4.3</a> of [<a href="#RFC8446" class="cite xref">RFC8446</a>]</span> apply. In particular, signature-based modes of
+TLS depend on the signature scheme being secure against chosen message
+attacks <span>[<a href="#SIGMA" class="cite xref">SIGMA</a>]</span>. Per Section 3.1 of
+<span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span>, ML-DSA is designed to meet this property.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">Implementation failures, such as side channels, in cryptographic primitives can
+also compromise the primitive and thus a TLS connection depending on it.
+Sections 3.4 and 3.6 of <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]</span> discuss additional considerations for
+implementing ML-DSA, including guidance on the choice of hedged vs deterministic
+variants. These considerations apply when ML-DSA is used for TLS.<a href="#section-4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1329,7 +1335,7 @@ and Section 4.4.3) and <span>[<a href="#FIPS204" class="cite xref">FIPS204</a>]<
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
 <p id="section-5-1">This document requests new entries to the TLS SignatureScheme registry,
-according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847#section-6" class="relref">Section 6</a> of [<a href="#TLSIANA" class="cite xref">TLSIANA</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
+according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847#section-6" class="relref">Section 6</a> of [<a href="#RFC9847" class="cite xref">RFC9847</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <table class="center" id="table-2">
         <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
 <thead>
@@ -1361,6 +1367,17 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
           </tr>
         </tbody>
       </table>
+<p id="section-5-3">As defined in <span><a href="https://rfc-editor.org/rfc/rfc9847#section-3" class="relref">Section 3</a> of [<a href="#RFC9847" class="cite xref">RFC9847</a>]</span>, the value N indicates<a href="#section-5-3" class="pilcrow">¶</a></p>
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-5-4.1">
+          <p id="section-5-4.1.1">That the item has not been evaluated by the IETF and
+that the IETF has made no statement about the suitability of
+the associated mechanism. This does not necessarily mean that
+the mechanism is flawed, only that no consensus exists. The
+IETF might have consensus to leave an item marked as "N" on the
+basis of the item having limited applicability or usage constraints<a href="#section-5-4.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -1387,8 +1404,12 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8446">[RFC8446]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.3"</span>, <span class="seriesInfo">RFC 8446</span>, <span class="seriesInfo">DOI 10.17487/RFC8446</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8446">https://www.rfc-editor.org/rfc/rfc8446</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9881">[RFC9881]</dt>
+      <dd>
+<span class="refAuthor">Massimo, J.</span>, <span class="refAuthor">Kampanakis, P.</span>, <span class="refAuthor">Turner, S.</span>, and <span class="refAuthor">B. E. Westerbaan</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure -- Algorithm Identifiers for the Module-Lattice-Based Digital Signature Algorithm (ML-DSA)"</span>, <span class="seriesInfo">RFC 9881</span>, <span class="seriesInfo">DOI 10.17487/RFC9881</span>, <time datetime="2025-10" class="refDate">October 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9881">https://www.rfc-editor.org/rfc/rfc9881</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1399,17 +1420,13 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="MLDSACERTS">[MLDSACERTS]</dt>
+<dt id="RFC9847">[RFC9847]</dt>
         <dd>
-<span class="refAuthor">Massimo, J.</span>, <span class="refAuthor">Kampanakis, P.</span>, <span class="refAuthor">Turner, S.</span>, and <span class="refAuthor">B. E. Westerbaan</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure -- Algorithm Identifiers for the Module-Lattice-Based Digital Signature Algorithm (ML-DSA)"</span>, <span class="seriesInfo">RFC 9881</span>, <span class="seriesInfo">DOI 10.17487/RFC9881</span>, <time datetime="2025-10" class="refDate">October 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9881">https://www.rfc-editor.org/rfc/rfc9881</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC5246">[RFC5246]</dt>
-        <dd>
-<span class="refAuthor">Dierks, T.</span> and <span class="refAuthor">E. Rescorla</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.2"</span>, <span class="seriesInfo">RFC 5246</span>, <span class="seriesInfo">DOI 10.17487/RFC5246</span>, <time datetime="2008-08" class="refDate">August 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5246">https://www.rfc-editor.org/rfc/rfc5246</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="TLSIANA">[TLSIANA]</dt>
-      <dd>
 <span class="refAuthor">Salowey, J.</span> and <span class="refAuthor">S. Turner</span>, <span class="refTitle">"IANA Registry Updates for TLS and DTLS"</span>, <span class="seriesInfo">RFC 9847</span>, <span class="seriesInfo">DOI 10.17487/RFC9847</span>, <time datetime="2025-12" class="refDate">December 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9847">https://www.rfc-editor.org/rfc/rfc9847</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="SIGMA">[SIGMA]</dt>
+      <dd>
+<span class="refAuthor">Krawczyk, H.</span>, <span class="refTitle">"SIGMA: The ‘SIGn-and-MAc’ Approach to Authenticated Diffie-Hellman and Its Use in the IKE Protocols"</span>, <span class="refContent">Springer Berlin Heidelberg</span>, <span class="seriesInfo">Lecture Notes in Computer Science pp. 400-425</span>, <span class="seriesInfo">DOI 10.1007/978-3-540-45146-4_24</span>, <span class="seriesInfo">ISBN ["9783540406747", "9783540451464"]</span>, <time datetime="2003" class="refDate">2003</time>, <span>&lt;<a href="https://doi.org/10.1007/978-3-540-45146-4_24">https://doi.org/10.1007/978-3-540-45146-4_24</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1431,6 +1448,10 @@ according to the procedures in <span><a href="https://rfc-editor.org/rfc/rfc9847
     Loganaden Velvindron,
     David Benjamin,
     Viktor Dukhovni,
+    Rob Sayre,
+    Daniel Van Geest,
+    Martin Thomson,
+    Wang Guilin,
     and Nick Sullivan
     for their review and feedback.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
