@@ -115,10 +115,6 @@ The corresponding end-entity
 certificate MUST use the corresponding AlgorithmIdentifier
 from {{schemes}} in its SubjectPublicKeyInfo.
 
-The context parameter defined in {{FIPS204}} Algorithm 2 and 3
-MUST be the empty string. Note that the context parameter of FIPS 204
-is different from the context string of {{Section 4.4.3 of RFC8446}}.
-
 # Security Considerations
 
 The security considerations described in {{Appendices C.2 and E.1 of RFC8446}}
