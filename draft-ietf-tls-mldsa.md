@@ -141,6 +141,15 @@ according to the procedures in {{Section 6 of RFC9847}}.
 | 0x0905  | mldsa65     | N           | This document. |
 | 0x0906  | mldsa87     | N           | This document. |
 
+As defined in {{Section 3 of RFC9847}}, the value N indicates
+
+> That the item has not been evaluated by the IETF and
+> that the IETF has made no statement about the suitability of
+> the associated mechanism. This does not necessarily mean that
+> the mechanism is flawed, only that no consensus exists. The
+> IETF might have consensus to leave an item marked as "N" on the
+> basis of the item having limited applicability or usage constraints
+
 --- back
 
 # Acknowledgments
