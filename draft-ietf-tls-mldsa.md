@@ -165,7 +165,6 @@ Thanks to
     Loganaden Velvindron,
     David Benjamin,
     Viktor Dukhovni,
-    Rob Sayre,
     Daniel Van Geest,
     Martin Thomson,
     Wang Guilin,
