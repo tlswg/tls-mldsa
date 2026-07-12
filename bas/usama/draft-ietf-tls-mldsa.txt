@@ -131,7 +131,7 @@ Table of Contents
 3.1.  Certificate Chain
 
    For the purpose of signalling support for signatures on certificates
-   as per Section 4.2.3 of [RFC9846], these values indicate support for
+   as per Section 4.3.3 of [RFC9846], these values indicate support for
    signing using the given AlgorithmIdentifier shown in Table 1 as
    defined in [RFC9881].
 
@@ -139,11 +139,11 @@ Table of Contents
 
    When one of those SignatureScheme values is used in a
    CertificateVerify message, then the signature MUST be computed and
-   verified as specified in Section 4.4.3 of [RFC9846], using Algorithm
+   verified as specified in Section 4.5.2 of [RFC9846], using Algorithm
    2 (ML-DSA.Sign) and Algorithm 3 (ML-DSA.Verify) of [FIPS204]
    respectively.  The context (ctx) parameter MUST be the empty string.
    Note that the context parameter of FIPS 204 is different from the
-   context string of Section 4.4.3 of [RFC9846].
+   context string of Section 4.5.2 of [RFC9846].
 
    The corresponding end-entity certificate MUST use the corresponding
    AlgorithmIdentifier from Table 1 in its SubjectPublicKeyInfo.
@@ -151,7 +151,7 @@ Table of Contents
 4.  Security Considerations
 
    The security considerations described in Appendices C.2 and F.1 of
-   [RFC9846] and Section 4.4.3 of [RFC9846] apply.  In particular,
+   [RFC9846] and Section 4.5.2 of [RFC9846] apply.  In particular,
    signature-based modes of TLS depend on the signature scheme being
    secure against chosen message attacks [SIGMA].  Per Section 3.1 of
    [FIPS204], ML-DSA is designed to meet this property.
